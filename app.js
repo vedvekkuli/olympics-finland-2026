@@ -831,6 +831,7 @@ function initStickyFilter() {
     let filterBarTop = 0;
     let filterBarHeight = 0;
     let isFixed = false;
+    let initialized = false;
 
     function recalculatePosition() {
         // Only recalculate when not fixed
@@ -842,10 +843,14 @@ function initStickyFilter() {
     }
 
     function updateStickyState() {
+        // Don't run until properly initialized
+        if (!initialized) return;
+
         const scrollY = window.scrollY;
 
         // Become sticky when scrolled past the filter bar's original position
-        if (scrollY >= filterBarTop && !isFixed) {
+        // filterBarTop must be > 100 to ensure hero has been measured
+        if (filterBarTop > 100 && scrollY >= filterBarTop && !isFixed) {
             isFixed = true;
             filterBar.classList.add('is-fixed');
             placeholder.style.display = 'block';
@@ -859,15 +864,13 @@ function initStickyFilter() {
 
     // Wait for page to fully load before calculating position
     window.addEventListener('load', () => {
-        recalculatePosition();
-        updateStickyState();
+        // Delay to ensure all rendering is complete
+        setTimeout(() => {
+            recalculatePosition();
+            initialized = true;
+            updateStickyState();
+        }, 200);
     });
-
-    // Also try after a short delay (for fonts, images, etc.)
-    setTimeout(() => {
-        recalculatePosition();
-        updateStickyState();
-    }, 100);
 
     // Listen to scroll
     window.addEventListener('scroll', updateStickyState, { passive: true });
