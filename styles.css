@@ -936,11 +936,16 @@ body {
 
 /* Finnish events - blue accent */
 .event-item.finnish {
-    background: rgba(0, 53, 128, 0.04);
+    background: rgba(0, 100, 180, 0.08);
 }
 
 .event-item.finnish::before {
     background: var(--fi-blue);
+}
+
+.event-item.finnish .event-detail {
+    color: var(--fi-blue);
+    font-weight: 500;
 }
 
 /* Medal events without Finnish - gold accent */
@@ -1018,6 +1023,7 @@ body {
 
 .event-item.finnish .event-name {
     font-weight: 600;
+    color: var(--fi-blue-dark);
 }
 
 /* Event Detail - secondary, inline */
