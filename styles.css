@@ -1,0 +1,2083 @@
+/* ============================================
+   Nordic Ice - Milano Cortina 2026 Finland
+   Mobile-First Olympic Schedule
+   ============================================ */
+
+/* CSS Variables */
+:root {
+    /* Finnish Colors */
+    --fi-blue: #003580;
+    --fi-blue-light: #0047ab;
+    --fi-blue-dark: #002255;
+    --fi-white: #ffffff;
+
+    /* Olympic Ring Colors */
+    --ring-blue: #0081C8;
+    --ring-yellow: #FCB131;
+    --ring-black: #1a1a1a;
+    --ring-green: #00A651;
+    --ring-red: #EE334E;
+
+    /* UI Colors */
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-frost: rgba(255, 255, 255, 0.85);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 53, 128, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 53, 128, 0.12);
+    --shadow-lg: 0 12px 40px rgba(0, 53, 128, 0.15);
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+
+    /* Typography */
+    --font-display: 'Oswald', sans-serif;
+    --font-body: 'Source Sans 3', sans-serif;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 400ms ease;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    min-height: 100%;
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl);
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(0, 53, 128, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(0, 129, 200, 0.1) 0%, transparent 50%),
+        linear-gradient(180deg, #e8f4fc 0%, #f8fafc 50%, #ffffff 100%);
+    z-index: -1;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003580' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+}
+
+.hero-content {
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Finnish Flag */
+.finland-flag {
+    position: relative;
+    width: 80px;
+    height: 52px;
+    background: var(--fi-white);
+    border-radius: 4px;
+    margin: 0 auto var(--space-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.flag-cross-h {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: var(--fi-blue);
+    transform: translateY(-50%);
+}
+
+.flag-cross-v {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 26px;
+    width: 12px;
+    background: var(--fi-blue);
+}
+
+/* Hero Text */
+.hero-location {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--fi-blue);
+    margin-bottom: var(--space-sm);
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.title-year {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--fi-blue);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.title-main {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-top: var(--space-sm);
+}
+
+/* Countdown */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--bg-frost);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 53, 128, 0.1);
+    box-shadow: var(--shadow-md);
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+}
+
+.countdown-value {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--fi-blue);
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: var(--space-xs);
+}
+
+/* Date Badge */
+.hero-dates {
+    margin-top: var(--space-lg);
+}
+
+.date-badge {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--fi-blue);
+    color: white;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border-radius: 100px;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: var(--space-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid var(--text-muted);
+    border-bottom: 2px solid var(--text-muted);
+    transform: rotate(45deg);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(8px); }
+    60% { transform: translateX(-50%) translateY(4px); }
+}
+
+/* ============================================
+   Content Wrapper - Enables Sticky Filter
+   ============================================ */
+.content-wrapper {
+    position: relative;
+}
+
+/* ============================================
+   Filter Bar - Clean Nordic Design
+   ============================================ */
+.filter-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 53, 128, 0.06);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* When filter bar is fixed to top via JS */
+.filter-bar.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+/* When scrolled past hero, add more prominence */
+.filter-bar.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 53, 128, 0.12);
+}
+
+/* Placeholder to maintain layout when filter is fixed */
+.filter-bar-placeholder {
+    background: transparent;
+}
+
+/* Filter Rows */
+.filter-row {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+
+/* Row 1: Toggle Filters */
+.filter-row-toggles {
+    gap: 10px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 53, 128, 0.06);
+}
+
+.filter-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex: 1;
+}
+
+.filter-toggle input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.toggle-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px;
+    background: #f8fafc;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: all 150ms ease;
+}
+
+.filter-toggle:hover .toggle-content {
+    background: #f1f5f9;
+}
+
+.filter-toggle input:checked + .toggle-content {
+    background: rgba(0, 53, 128, 0.08);
+    border-color: var(--fi-blue);
+}
+
+.toggle-icon {
+    font-size: 1.125rem;
+    line-height: 1;
+}
+
+.toggle-text {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.filter-toggle input:checked + .toggle-content .toggle-text {
+    color: var(--fi-blue);
+}
+
+/* Row 2: Dropdown Filters */
+.filter-row-dropdowns {
+    gap: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 53, 128, 0.06);
+}
+
+.filter-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    padding: 10px 14px;
+    background: #f8fafc;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 150ms ease;
+    font-family: var(--font-body);
+}
+
+.filter-dropdown:hover {
+    background: #f1f5f9;
+}
+
+.filter-dropdown.active {
+    background: rgba(0, 53, 128, 0.08);
+    border-color: var(--fi-blue);
+}
+
+.dropdown-icon {
+    font-size: 1.125rem;
+    line-height: 1;
+}
+
+.dropdown-text {
+    flex: 1;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filter-dropdown.active .dropdown-text {
+    color: var(--fi-blue);
+}
+
+.dropdown-arrow {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    transition: transform 150ms ease;
+}
+
+.filter-dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+    color: var(--fi-blue);
+}
+
+/* Row 3: Date Rail */
+.filter-row-dates {
+    gap: 10px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.filter-row-dates::-webkit-scrollbar {
+    display: none;
+}
+
+.date-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+}
+
+.date-rail {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+}
+
+.date-rail::-webkit-scrollbar {
+    display: none;
+}
+
+.date-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-family: var(--font-display);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 120ms ease;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.date-pill:hover {
+    background: #f1f5f9;
+    color: var(--text-secondary);
+}
+
+.date-pill.active {
+    background: var(--fi-blue);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 53, 128, 0.25);
+}
+
+.date-pill .date-num {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.date-pill .date-day {
+    font-size: 0.5625rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-top: 1px;
+}
+
+/* "Kaikki" button in date rail */
+.date-pill[data-date="all"] {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 52px;
+}
+
+/* Finnish events indicator dot */
+.date-pill.has-finnish::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    width: 5px;
+    height: 5px;
+    background: var(--ring-yellow);
+    border-radius: 50%;
+}
+
+.date-pill.active.has-finnish::after {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================
+   Filter Panels (Bottom Sheet Style)
+   ============================================ */
+.filter-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 32px rgba(0, 53, 128, 0.15);
+    transform: translateY(100%);
+    transition: transform 300ms cubic-bezier(0.32, 0.72, 0, 1);
+    z-index: 200;
+    max-height: 70vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-panel.open {
+    transform: translateY(0);
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.panel-header::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+}
+
+.panel-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.panel-close {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--bg-primary);
+    border-radius: 50%;
+    font-size: 1rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.panel-close:hover {
+    background: var(--border-color);
+    color: var(--text-primary);
+}
+
+.panel-options {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-content: flex-start;
+}
+
+.panel-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.panel-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.option-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 120ms ease;
+}
+
+.panel-option input:checked + .option-badge {
+    background: rgba(0, 53, 128, 0.08);
+    border-color: var(--fi-blue);
+    color: var(--fi-blue);
+}
+
+/* "Kaikki" option styling */
+.option-badge.all-option {
+    font-weight: 600;
+    background: var(--bg-secondary);
+}
+
+.option-badge.free::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--ring-green);
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.option-badge.paid::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--ring-blue);
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.panel-actions {
+    display: flex;
+    gap: 12px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    flex-shrink: 0;
+}
+
+.panel-btn {
+    flex: 1;
+    height: 44px;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.panel-btn.primary {
+    background: var(--fi-blue);
+    color: white;
+}
+
+.panel-btn.primary:hover {
+    background: var(--fi-blue-light);
+}
+
+.panel-btn.secondary {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.panel-btn.secondary:hover {
+    background: var(--bg-primary);
+}
+
+/* Panel Backdrop */
+.panel-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 34, 85, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 200ms ease, visibility 200ms ease;
+    z-index: 150;
+}
+
+.panel-backdrop.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ============================================
+   Main Content
+   ============================================ */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md);
+}
+
+/* Quick Stats */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+    margin-bottom: var(--space-2xl);
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-md);
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--fi-blue);
+}
+
+.stat-label {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: var(--space-2xl);
+}
+
+.section-header {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--fi-blue);
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.section-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: var(--space-xs);
+}
+
+/* ============================================
+   Schedule Section
+   ============================================ */
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.schedule-day {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 53, 128, 0.04);
+}
+
+.schedule-day + .schedule-day {
+    margin-top: var(--space-md);
+}
+
+.schedule-day-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: var(--fi-blue);
+    color: white;
+}
+
+.schedule-day-header.special {
+    background: linear-gradient(135deg, var(--ring-yellow) 0%, #e5a020 100%);
+    color: var(--text-primary);
+}
+
+.day-info {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.day-date {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.day-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.day-medals {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 100px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.schedule-events {
+    padding: 0;
+}
+
+/* ============================================
+   Event Item - Clean Hierarchy
+   ============================================ */
+.event-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+/* Priority indicator - left accent bar */
+.event-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: transparent;
+}
+
+/* Finnish events - blue accent */
+.event-item.finnish {
+    background: rgba(0, 53, 128, 0.04);
+}
+
+.event-item.finnish::before {
+    background: var(--fi-blue);
+}
+
+/* Medal events without Finnish - gold accent */
+.event-item.medal:not(.finnish)::before {
+    background: var(--ring-yellow);
+}
+
+/* Finnish + Medal - gradient accent */
+.event-item.finnish.medal::before {
+    background: linear-gradient(180deg, var(--fi-blue) 50%, var(--ring-yellow) 50%);
+    width: 4px;
+}
+
+/* Time */
+.event-time {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--fi-blue);
+    padding-top: 2px;
+}
+
+/* Details Container */
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+/* Event Header - sport + flag */
+.event-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Sport Label - smallest, muted */
+.event-sport {
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+}
+
+/* Event indicators - top right corner */
+.event-indicators {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    display: flex;
+    gap: 4px;
+    font-size: 0.875rem;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+/* Main event content */
+.event-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+}
+
+/* Event Name - primary */
+.event-name {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.event-item.finnish .event-name {
+    font-weight: 600;
+}
+
+/* Event Detail - secondary, inline */
+.event-detail {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+/* Broadcast tags */
+.event-bc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.bc-tag {
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 0.625rem;
+    font-weight: 600;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.bc-tag.free {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.bc-tag.paid {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.event-venue {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* ============================================
+   Athletes Section
+   ============================================ */
+.team-block {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    margin-bottom: var(--space-lg);
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: linear-gradient(135deg, var(--fi-blue) 0%, var(--fi-blue-light) 100%);
+    color: white;
+}
+
+.team-icon {
+    font-size: 2rem;
+}
+
+.team-info {
+    flex: 1;
+}
+
+.team-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.team-meta {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin-top: var(--space-xs);
+}
+
+/* Roster Sections */
+.roster-section {
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.roster-section:last-child {
+    border-bottom: none;
+}
+
+.roster-title {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-md);
+}
+
+.roster-note {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Player Grid */
+.player-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+}
+
+.player-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-primary);
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.player-card:hover {
+    border-color: var(--fi-blue);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.player-card.featured {
+    background: linear-gradient(135deg, rgba(0, 53, 128, 0.08) 0%, rgba(0, 129, 200, 0.05) 100%);
+    border-color: rgba(0, 53, 128, 0.2);
+}
+
+.player-card.legend {
+    background: linear-gradient(135deg, rgba(252, 177, 49, 0.15) 0%, rgba(252, 177, 49, 0.05) 100%);
+    border-color: rgba(252, 177, 49, 0.3);
+}
+
+.player-badge {
+    position: absolute;
+    top: -8px;
+    right: var(--space-sm);
+    padding: 2px 8px;
+    background: var(--fi-blue);
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 600;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.player-card.legend .player-badge {
+    background: var(--ring-yellow);
+    color: var(--text-primary);
+}
+
+.player-number {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--fi-blue);
+    color: white;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.player-name {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-team {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Team Schedule */
+.team-schedule {
+    padding: var(--space-md) var(--space-lg);
+    background: var(--bg-primary);
+}
+
+.match-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.match-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.match-item.highlight {
+    border-color: var(--ring-yellow);
+    background: linear-gradient(135deg, rgba(252, 177, 49, 0.1) 0%, transparent 100%);
+}
+
+.match-date {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--fi-blue);
+    white-space: nowrap;
+}
+
+.match-teams {
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.match-time {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Events List */
+.events-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.event-tag {
+    padding: var(--space-xs) var(--space-sm);
+    background: rgba(0, 53, 128, 0.08);
+    color: var(--fi-blue);
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 100px;
+}
+
+/* Sport Block (new athlete rendering) */
+.sport-block {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    margin-bottom: var(--space-lg);
+}
+
+.sport-block.medal-hope {
+    border-color: rgba(252, 177, 49, 0.4);
+}
+
+.sport-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: linear-gradient(135deg, var(--fi-blue) 0%, var(--fi-blue-light) 100%);
+    color: white;
+}
+
+.sport-block.medal-hope .sport-header {
+    background: linear-gradient(135deg, var(--fi-blue) 0%, #5d4a00 100%);
+}
+
+.sport-icon {
+    font-size: 2.5rem;
+}
+
+.sport-info {
+    flex: 1;
+}
+
+.sport-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.sport-meta {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin-top: var(--space-xs);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.sport-achievement {
+    font-size: 0.8125rem;
+    opacity: 0.85;
+    margin-top: var(--space-xs);
+}
+
+.hope-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    background: var(--ring-yellow);
+    color: var(--text-primary);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    border-radius: 100px;
+}
+
+/* Stars Section */
+.stars-section {
+    padding: var(--space-md) var(--space-lg);
+    background: linear-gradient(135deg, rgba(252, 177, 49, 0.1) 0%, transparent 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stars-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.star-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-xs) var(--space-sm);
+    background: rgba(252, 177, 49, 0.2);
+    border: 1px solid rgba(252, 177, 49, 0.5);
+    color: #6d5a00;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border-radius: 100px;
+}
+
+/* Player List (simpler than grid) */
+.player-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.player-list .player-name {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.player-list .player-name:hover {
+    border-color: var(--fi-blue);
+    background: rgba(0, 53, 128, 0.05);
+}
+
+/* Events Section */
+.events-section {
+    padding: var(--space-md) var(--space-lg);
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-primary);
+}
+
+.events-section .events-list {
+    margin-top: 0;
+}
+
+/* Matches Section */
+.matches-section {
+    padding: var(--space-md) var(--space-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.match-opponent {
+    font-size: 0.875rem;
+    color: var(--text-primary);
+}
+
+
+/* ============================================
+   Where to Watch Section
+   ============================================ */
+.watch-grid {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.watch-card {
+    position: relative;
+    padding: var(--space-xl);
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    transition: all var(--transition-normal);
+}
+
+.watch-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.watch-card.free {
+    border-color: var(--ring-green);
+}
+
+.watch-card.paid {
+    border-color: var(--ring-blue);
+}
+
+.watch-badge {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 100px;
+}
+
+.watch-card.free .watch-badge {
+    background: var(--ring-green);
+    color: white;
+}
+
+.watch-card.paid .watch-badge {
+    background: var(--ring-blue);
+    color: white;
+}
+
+.watch-logo {
+    margin-bottom: var(--space-md);
+}
+
+.yle-logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00b2a9;
+    text-transform: lowercase;
+}
+
+.euro-logo {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.watch-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.watch-desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.watch-features {
+    list-style: none;
+    margin-bottom: var(--space-lg);
+}
+
+.watch-features li {
+    padding: var(--space-xs) 0;
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+}
+
+.watch-link {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--fi-blue);
+    text-decoration: none;
+    border: 2px solid var(--fi-blue);
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+}
+
+.watch-link:hover {
+    background: var(--fi-blue);
+    color: white;
+}
+
+/* Timezone Note */
+.timezone-note {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    background: rgba(0, 53, 128, 0.05);
+    border-radius: 12px;
+    border-left: 4px solid var(--fi-blue);
+}
+
+.note-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.timezone-note p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--fi-blue-dark);
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.olympic-rings {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: var(--space-lg);
+}
+
+.ring {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 3px solid;
+}
+
+.ring.blue { border-color: var(--ring-blue); }
+.ring.yellow { border-color: var(--ring-yellow); }
+.ring.black { border-color: white; }
+.ring.green { border-color: var(--ring-green); }
+.ring.red { border-color: var(--ring-red); }
+
+.footer-text {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+}
+
+.footer-disclaimer {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+/* ============================================
+   Tablet Breakpoint (640px+)
+   ============================================ */
+@media (min-width: 640px) {
+    .title-year {
+        font-size: 5rem;
+    }
+
+    .title-main {
+        font-size: 2.25rem;
+    }
+
+    .countdown-value {
+        font-size: 2.5rem;
+    }
+
+    .countdown-item {
+        min-width: 80px;
+    }
+
+    /* Filter bar tablet adjustments */
+    .filter-bar {
+        max-width: 600px;
+        margin: 0 auto;
+        border-radius: 0 0 16px 16px;
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+    }
+
+    .filter-bar.is-fixed {
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        width: 600px;
+    }
+
+    .filter-row {
+        padding: 0 20px;
+    }
+
+    .date-pill {
+        min-width: 48px;
+        height: 48px;
+    }
+
+    .quick-stats {
+        gap: var(--space-md);
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .player-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .watch-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   Desktop Breakpoint (1024px+)
+   ============================================ */
+@media (min-width: 1024px) {
+    .hero {
+        padding: var(--space-2xl);
+    }
+
+    .finland-flag {
+        width: 100px;
+        height: 65px;
+    }
+
+    .flag-cross-h {
+        height: 15px;
+    }
+
+    .flag-cross-v {
+        left: 32px;
+        width: 15px;
+    }
+
+    .title-year {
+        font-size: 7rem;
+    }
+
+    .title-main {
+        font-size: 2.75rem;
+    }
+
+    .countdown {
+        gap: var(--space-xl);
+        padding: var(--space-xl) var(--space-2xl);
+    }
+
+    .countdown-value {
+        font-size: 3.5rem;
+    }
+
+    .countdown-item {
+        min-width: 100px;
+    }
+
+    .main-content {
+        padding: var(--space-2xl);
+    }
+
+    .section-title {
+        font-size: 2.25rem;
+    }
+
+    .player-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .match-item {
+        max-width: 500px;
+    }
+}
+
+/* ============================================
+   Utilities & States
+   ============================================ */
+.hidden {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Loading State */
+.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+    outline: 2px solid var(--fi-blue);
+    outline-offset: 2px;
+}
+
+
+.event-header-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.medal-badge {
+    font-size: 0.75rem;
+}
+
+/* Broadcast Legend */
+.broadcast-legend {
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.broadcast-legend h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-sm);
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
+.legend-badge {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.legend-badge.free-tv { background: #dcfce7; border: 1px solid #166534; }
+.legend-badge.free-stream { background: #d1fae5; border: 1px solid #065f46; }
+.legend-badge.paid-tv { background: #dbeafe; border: 1px solid #1e40af; }
+.legend-badge.paid-stream { background: #e0e7ff; border: 1px solid #3730a3; }
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2xl);
+    color: var(--text-muted);
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--fi-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: var(--space-md);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.no-results {
+    text-align: center;
+    padding: var(--space-2xl);
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Watch Card Logos */
+.hbo-logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #5822b4;
+    text-transform: lowercase;
+}
+
+.tv5-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e4002b;
+}
+
+.watch-card.secondary {
+    opacity: 0.9;
+}
+
+.watch-card.secondary .watch-features {
+    font-size: 0.875rem;
+}
+
+/* Filter bar desktop improvements */
+@media (min-width: 640px) {
+    .filter-panel {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(100%);
+        width: 400px;
+        max-width: calc(100vw - 32px);
+        border-radius: 16px;
+        bottom: 16px;
+    }
+
+    .filter-panel.open {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@media (min-width: 1024px) {
+    .filter-bar {
+        max-width: 700px;
+    }
+
+    .filter-bar.is-fixed {
+        width: 700px;
+    }
+
+    .date-pill {
+        min-width: 52px;
+        height: 52px;
+    }
+
+    .date-pill .date-num {
+        font-size: 1.125rem;
+    }
+}
+
+/* Footer update */
+.footer-update {
+    font-size: 0.6875rem;
+    opacity: 0.5;
+    margin-top: var(--space-sm);
+}
+
+/* ============================================
+   Finland Overview Section
+   ============================================ */
+.finland-overview {
+    margin-bottom: var(--space-2xl);
+}
+
+.finland-sports-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+@media (min-width: 640px) {
+    .finland-sports-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .finland-sports-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.finland-sport-card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    overflow: hidden;
+    transition: all var(--transition-fast);
+}
+
+.finland-sport-card:hover {
+    border-color: var(--fi-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.finland-sport-card.team-sport {
+    border-color: rgba(0, 53, 128, 0.3);
+    background: linear-gradient(135deg, rgba(0, 53, 128, 0.05) 0%, transparent 100%);
+}
+
+.finland-sport-card.medal-hope {
+    border-color: var(--ring-yellow);
+    background: linear-gradient(135deg, rgba(252, 177, 49, 0.1) 0%, transparent 100%);
+}
+
+.sport-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--fi-blue);
+    color: white;
+}
+
+.sport-card-header.medal-hope {
+    background: linear-gradient(135deg, var(--fi-blue) 0%, #1a5a9e 100%);
+}
+
+.sport-card-emoji {
+    font-size: 1.5rem;
+}
+
+.sport-card-title {
+    flex: 1;
+}
+
+.sport-card-name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+}
+
+.sport-card-count {
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+.medal-hope-badge {
+    background: var(--ring-yellow);
+    color: var(--text-primary);
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sport-card-body {
+    padding: var(--space-md);
+}
+
+.sport-card-athletes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.athlete-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.athlete-row:last-child {
+    border-bottom: none;
+}
+
+.athlete-name {
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+}
+
+.athlete-detail {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: auto;
+}
+
+.team-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(0, 53, 128, 0.08);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: var(--fi-blue);
+    font-weight: 500;
+}
+
+.team-badge-icon {
+    font-size: 1rem;
+}
+
+.sport-card-note {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: var(--space-sm);
+    background: var(--bg-primary);
+    border-radius: 6px;
+    margin-top: var(--space-sm);
+}
+
+.sport-note {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 0;
+}
+
+.sport-events-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: var(--space-sm);
+}
+
+.event-mini-tag {
+    padding: 2px 8px;
+    background: rgba(0, 53, 128, 0.06);
+    color: var(--text-secondary);
+    font-size: 0.6875rem;
+    border-radius: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}

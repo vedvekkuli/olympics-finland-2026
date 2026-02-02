@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talviolympialaiset 2026 | Aikataulu & Lähetykset Suomessa</title>
+    <meta name="description" content="Milano-Cortina 2026 talviolympialaisten aikataulu, TV-lähetykset ja suomalaisurheilijat. Yle, HBO Max, Eurosport.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="finland-flag">
+                <div class="flag-cross-h"></div>
+                <div class="flag-cross-v"></div>
+            </div>
+            <div class="hero-text">
+                <p class="hero-location">Milano Cortina, Italia</p>
+                <h1 class="hero-title">
+                    <span class="title-year">2026</span>
+                    <span class="title-main">Talviolympialaiset</span>
+                </h1>
+                <p class="hero-subtitle">Aikataulu • Lähetykset • Suomalaiset</p>
+            </div>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">--</span>
+                    <span class="countdown-label">päivää</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">--</span>
+                    <span class="countdown-label">tuntia</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">--</span>
+                    <span class="countdown-label">minuuttia</span>
+                </div>
+            </div>
+            <div class="hero-dates">
+                <span class="date-badge">6.–22. helmikuuta 2026</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Selaa alas</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </header>
+
+    <!-- Content Wrapper for Sticky Filter -->
+    <div class="content-wrapper">
+
+    <!-- Sticky Filter Bar - Clean Nordic Design -->
+    <nav class="filter-bar" id="filterBar">
+        <!-- Row 1: Toggle Filters -->
+        <div class="filter-row filter-row-toggles">
+            <label class="filter-toggle" data-filter="finnish">
+                <input type="checkbox" id="finnishOnly">
+                <span class="toggle-content">
+                    <span class="toggle-icon">🇫🇮</span>
+                    <span class="toggle-text">Vain suomalaiset</span>
+                </span>
+            </label>
+            <label class="filter-toggle" data-filter="medals">
+                <input type="checkbox" id="medalsOnly">
+                <span class="toggle-content">
+                    <span class="toggle-icon">🏅</span>
+                    <span class="toggle-text">Vain loppukilpailut</span>
+                </span>
+            </label>
+        </div>
+
+        <!-- Row 2: Dropdown Filters -->
+        <div class="filter-row filter-row-dropdowns">
+            <button class="filter-dropdown" id="sportTrigger">
+                <span class="dropdown-icon">🎿</span>
+                <span class="dropdown-text" id="sportText">Kaikki lajit</span>
+                <span class="dropdown-arrow">▾</span>
+            </button>
+            <button class="filter-dropdown" id="channelTrigger">
+                <span class="dropdown-icon">📺</span>
+                <span class="dropdown-text" id="channelText">Kaikki kanavat</span>
+                <span class="dropdown-arrow">▾</span>
+            </button>
+        </div>
+
+        <!-- Row 3: Date Rail -->
+        <div class="filter-row filter-row-dates">
+            <span class="date-label">Päivä:</span>
+            <div class="date-rail" id="dateRail">
+                <button class="date-pill active" data-date="all">Kaikki</button>
+                <!-- Dates populated by JS -->
+            </div>
+        </div>
+
+        <!-- Hidden selects for compatibility -->
+        <select class="visually-hidden" id="sportFilter"><option value="all">Kaikki</option></select>
+        <select class="visually-hidden" id="dateFilter"><option value="all">Kaikki</option></select>
+    </nav>
+
+    <!-- Filter Dropdown Panels -->
+    <div class="filter-panel" id="sportPanel">
+        <div class="panel-header">
+            <span class="panel-title">Valitse lajit</span>
+            <button class="panel-close" data-close="sportPanel">✕</button>
+        </div>
+        <div class="panel-options" id="sportOptions">
+            <!-- Populated by JS -->
+        </div>
+        <div class="panel-actions">
+            <button class="panel-btn secondary" data-action="clear-sport">Tyhjennä</button>
+            <button class="panel-btn primary" data-action="apply-sport">Valmis</button>
+        </div>
+    </div>
+
+    <div class="filter-panel" id="channelPanel">
+        <div class="panel-header">
+            <span class="panel-title">Valitse kanavat</span>
+            <button class="panel-close" data-close="channelPanel">✕</button>
+        </div>
+        <div class="panel-options" id="channelOptions">
+            <label class="panel-option">
+                <input type="checkbox" value="yle-tv1" checked>
+                <span class="option-badge free">Yle TV1</span>
+            </label>
+            <label class="panel-option">
+                <input type="checkbox" value="yle-tv2" checked>
+                <span class="option-badge free">Yle TV2</span>
+            </label>
+            <label class="panel-option">
+                <input type="checkbox" value="yle-areena" checked>
+                <span class="option-badge free">Yle Areena</span>
+            </label>
+            <label class="panel-option">
+                <input type="checkbox" value="tv5" checked>
+                <span class="option-badge free">TV5</span>
+            </label>
+            <label class="panel-option">
+                <input type="checkbox" value="hbo-max" checked>
+                <span class="option-badge paid">HBO Max</span>
+            </label>
+            <label class="panel-option">
+                <input type="checkbox" value="eurosport1" checked>
+                <span class="option-badge paid">Eurosport</span>
+            </label>
+        </div>
+        <div class="panel-actions">
+            <button class="panel-btn secondary" data-action="clear-channel">Tyhjennä</button>
+            <button class="panel-btn primary" data-action="apply-channel">Valmis</button>
+        </div>
+    </div>
+
+    <!-- Panel Backdrop -->
+    <div class="panel-backdrop" id="panelBackdrop"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Schedule Section -->
+        <section class="section schedule-section" id="schedule">
+            <div class="section-header">
+                <h2 class="section-title">Aikataulu</h2>
+            </div>
+            <div class="schedule-list" id="scheduleList">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Where to Watch Section - NOW SECOND -->
+        <section class="section watch-section" id="watch">
+            <div class="section-header">
+                <h2 class="section-title">Lähetykset Suomessa</h2>
+                <p class="section-desc">Mistä katsoa mitäkin</p>
+            </div>
+
+            <div class="watch-grid">
+                <div class="watch-card free primary">
+                    <div class="watch-badge">Ilmainen</div>
+                    <div class="watch-logo">
+                        <span class="yle-logo">yle</span>
+                    </div>
+                    <h3 class="watch-name">Yle TV1</h3>
+                    <p class="watch-desc">Pääkanava - suomalaiskohteet</p>
+                    <ul class="watch-sports">
+                        <li>⛷️ Maastohiihto</li>
+                        <li>🎿 Ampumahiihto</li>
+                        <li>⛷️ Alppihiihto</li>
+                        <li>🎿 Mäkihyppy & Yhdistetty</li>
+                        <li>⛸️ Taitoluistelu</li>
+                        <li>🎭 Avajaiset & Päättäjäiset</li>
+                    </ul>
+                </div>
+
+                <div class="watch-card free">
+                    <div class="watch-badge">Ilmainen</div>
+                    <div class="watch-logo">
+                        <span class="yle-logo">yle</span>
+                    </div>
+                    <h3 class="watch-name">Yle TV2</h3>
+                    <p class="watch-desc">Jääkiekko & rinnakkaislähetykset</p>
+                    <ul class="watch-sports">
+                        <li>🏒 Jääkiekko (kaikki Suomen pelit)</li>
+                        <li>🏂 Lumilautailu</li>
+                        <li>🎿 Freestylehiihto</li>
+                        <li>📺 Rinnakkaislähetykset</li>
+                    </ul>
+                </div>
+
+                <div class="watch-card free">
+                    <div class="watch-badge">Ilmainen stream</div>
+                    <div class="watch-logo">
+                        <span class="yle-logo">yle areena</span>
+                    </div>
+                    <h3 class="watch-name">Yle Areena</h3>
+                    <p class="watch-desc">Kaikki Ylen lähetykset + monikamera</p>
+                    <ul class="watch-sports">
+                        <li>🌐 Kaikki TV1 & TV2 lähetykset</li>
+                        <li>📱 Monikamerastriimit</li>
+                        <li>🔄 Tallenteet</li>
+                        <li>🎙️ Suomenkielinen selostus</li>
+                    </ul>
+                    <a href="https://areena.yle.fi" class="watch-link" target="_blank" rel="noopener">areena.yle.fi →</a>
+                </div>
+
+                <div class="watch-card paid primary">
+                    <div class="watch-badge">Maksullinen</div>
+                    <div class="watch-logo">
+                        <span class="hbo-logo">max</span>
+                    </div>
+                    <h3 class="watch-name">HBO Max</h3>
+                    <p class="watch-desc">Kaikki 116 tapahtumaa</p>
+                    <ul class="watch-sports">
+                        <li>🏆 KAIKKI lajit ja tapahtumat</li>
+                        <li>🔄 Useita samanaikaisia striimejä</li>
+                        <li>📱 Kaikilla tilauksilla</li>
+                        <li>🎬 Tallenteet</li>
+                    </ul>
+                    <a href="https://www.hbomax.com/fi/fi/olympics" class="watch-link" target="_blank" rel="noopener">hbomax.com →</a>
+                </div>
+
+                <div class="watch-card paid">
+                    <div class="watch-badge">Maksullinen TV</div>
+                    <div class="watch-logo">
+                        <span class="euro-logo">eurosport</span>
+                    </div>
+                    <h3 class="watch-name">Eurosport 1 & 2</h3>
+                    <p class="watch-desc">Premium TV-kanavat</p>
+                    <ul class="watch-sports">
+                        <li>⛷️ Alppihiihto</li>
+                        <li>⛷️ Maastohiihto</li>
+                        <li>🥌 Curling</li>
+                        <li>🎬 Studiolähetykset</li>
+                    </ul>
+                </div>
+
+                <div class="watch-card free secondary">
+                    <div class="watch-badge">Ilmainen TV</div>
+                    <div class="watch-logo">
+                        <span class="tv5-logo">TV5</span>
+                    </div>
+                    <h3 class="watch-name">TV5</h3>
+                    <p class="watch-desc">Valikoidut tapahtumat</p>
+                    <ul class="watch-sports">
+                        <li>🎭 Avajaiset & Päättäjäiset</li>
+                        <li>📺 Koosteet</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="broadcast-legend">
+                <h4>Lähetysmerkinnät aikataulussa:</h4>
+                <div class="legend-items">
+                    <span class="legend-item"><span class="broadcast-badge free-tv">Yle TV1</span> Ilmainen TV</span>
+                    <span class="legend-item"><span class="broadcast-badge free-stream">Yle Areena</span> Ilmainen stream</span>
+                    <span class="legend-item"><span class="broadcast-badge paid-stream">HBO Max</span> Maksullinen</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Finnish Athletes Section - NOW THIRD -->
+        <section class="section athletes-section" id="athletes">
+            <div class="section-header">
+                <h2 class="section-title">Suomalaiset urheilijat</h2>
+                <p class="section-desc">103 urheilijaa 11 lajissa</p>
+            </div>
+            <div id="athletesList">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    </div><!-- End Content Wrapper -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="olympic-rings">
+                <span class="ring blue"></span>
+                <span class="ring yellow"></span>
+                <span class="ring black"></span>
+                <span class="ring green"></span>
+                <span class="ring red"></span>
+            </div>
+            <p class="footer-text">Milano Cortina 2026 • 6.–22. helmikuuta</p>
+            <p class="footer-disclaimer">Lähteet: <a href="https://yle.fi/a/74-20186944" target="_blank">Yle</a>, <a href="https://www.olympiakomitea.fi" target="_blank">Olympiakomitea</a></p>
+            <p class="footer-update">Aikataulut ja lähetystiedot voivat muuttua.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
