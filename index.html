@@ -56,8 +56,8 @@
 
         <!-- Filter Bar - appears before schedule, becomes sticky on scroll -->
         <nav class="filter-bar" id="filterBar">
-            <!-- Row 1: Toggle Filters -->
-            <div class="filter-row filter-row-toggles">
+            <!-- Row 1: All filter controls (single row on desktop) -->
+            <div class="filter-controls">
                 <label class="filter-toggle" data-filter="finnish">
                     <input type="checkbox" id="finnishOnly">
                     <span class="toggle-content">
@@ -72,10 +72,6 @@
                         <span class="toggle-text">Vain loppukilpailut</span>
                     </span>
                 </label>
-            </div>
-
-            <!-- Row 2: Dropdown Filters -->
-            <div class="filter-row filter-row-dropdowns">
                 <button class="filter-dropdown" id="sportTrigger">
                     <span class="dropdown-icon">🎿</span>
                     <span class="dropdown-text" id="sportText">Kaikki lajit</span>
@@ -88,7 +84,7 @@
                 </button>
             </div>
 
-            <!-- Row 3: Date Rail -->
+            <!-- Row 2: Date Rail -->
             <div class="filter-row filter-row-dates">
                 <span class="date-label">Päivä:</span>
                 <div class="date-rail" id="dateRail">
