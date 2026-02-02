@@ -730,9 +730,13 @@ function populateDateRail() {
 
         btn.innerHTML = `<span class="date-num">${dayNum}</span><span class="date-day">${abbr}</span>`;
 
-        // Mark days with Finnish athletes
+        // Mark days with Finnish athletes (blue dot)
         const hasFinnish = day.events.some(e => e.finnish);
         if (hasFinnish) btn.classList.add('has-finnish');
+
+        // Mark days with medal/final events (orange dot)
+        const hasMedals = day.events.some(e => e.medal);
+        if (hasMedals) btn.classList.add('has-medals');
 
         dateRail.appendChild(btn);
     });

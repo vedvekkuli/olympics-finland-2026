@@ -522,19 +522,53 @@ body {
     min-width: 52px;
 }
 
-/* Finnish events indicator dot */
-.date-pill.has-finnish::after {
+/* Day indicator dots container */
+.date-pill::before,
+.date-pill::after {
     content: '';
     position: absolute;
     bottom: 4px;
     width: 5px;
     height: 5px;
-    background: var(--ring-yellow);
     border-radius: 50%;
+    opacity: 0;
 }
 
-.date-pill.active.has-finnish::after {
+/* Finnish events indicator dot (blue) - left side */
+.date-pill::before {
+    left: calc(50% - 6px);
+}
+
+.date-pill.has-finnish::before {
+    opacity: 1;
+    background: var(--fi-blue);
+}
+
+.date-pill.active.has-finnish::before {
     background: rgba(255, 255, 255, 0.8);
+}
+
+/* Medal/final events indicator dot (orange) - right side */
+.date-pill::after {
+    right: calc(50% - 6px);
+}
+
+.date-pill.has-medals::after {
+    opacity: 1;
+    background: #f97316;
+}
+
+.date-pill.active.has-medals::after {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* When both dots are present, position them side by side */
+.date-pill.has-finnish.has-medals::before {
+    left: calc(50% - 7px);
+}
+
+.date-pill.has-finnish.has-medals::after {
+    right: calc(50% - 7px);
 }
 
 /* ============================================
