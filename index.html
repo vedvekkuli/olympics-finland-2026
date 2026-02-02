@@ -51,114 +51,111 @@
         </div>
     </header>
 
-    <!-- Content Wrapper for Sticky Filter -->
-    <div class="content-wrapper">
+    <!-- Main Content -->
+    <main class="main-content">
 
-    <!-- Sticky Filter Bar - Clean Nordic Design -->
-    <nav class="filter-bar" id="filterBar">
-        <!-- Row 1: Toggle Filters -->
-        <div class="filter-row filter-row-toggles">
-            <label class="filter-toggle" data-filter="finnish">
-                <input type="checkbox" id="finnishOnly">
-                <span class="toggle-content">
-                    <span class="toggle-icon">🇫🇮</span>
-                    <span class="toggle-text">Vain suomalaiset</span>
-                </span>
-            </label>
-            <label class="filter-toggle" data-filter="medals">
-                <input type="checkbox" id="medalsOnly">
-                <span class="toggle-content">
-                    <span class="toggle-icon">🏅</span>
-                    <span class="toggle-text">Vain loppukilpailut</span>
-                </span>
-            </label>
-        </div>
+        <!-- Filter Bar - appears before schedule, becomes sticky on scroll -->
+        <nav class="filter-bar" id="filterBar">
+            <!-- Row 1: Toggle Filters -->
+            <div class="filter-row filter-row-toggles">
+                <label class="filter-toggle" data-filter="finnish">
+                    <input type="checkbox" id="finnishOnly">
+                    <span class="toggle-content">
+                        <span class="toggle-icon">🇫🇮</span>
+                        <span class="toggle-text">Vain suomalaiset</span>
+                    </span>
+                </label>
+                <label class="filter-toggle" data-filter="medals">
+                    <input type="checkbox" id="medalsOnly">
+                    <span class="toggle-content">
+                        <span class="toggle-icon">🏅</span>
+                        <span class="toggle-text">Vain loppukilpailut</span>
+                    </span>
+                </label>
+            </div>
 
-        <!-- Row 2: Dropdown Filters -->
-        <div class="filter-row filter-row-dropdowns">
-            <button class="filter-dropdown" id="sportTrigger">
-                <span class="dropdown-icon">🎿</span>
-                <span class="dropdown-text" id="sportText">Kaikki lajit</span>
-                <span class="dropdown-arrow">▾</span>
-            </button>
-            <button class="filter-dropdown" id="channelTrigger">
-                <span class="dropdown-icon">📺</span>
-                <span class="dropdown-text" id="channelText">Kaikki kanavat</span>
-                <span class="dropdown-arrow">▾</span>
-            </button>
-        </div>
+            <!-- Row 2: Dropdown Filters -->
+            <div class="filter-row filter-row-dropdowns">
+                <button class="filter-dropdown" id="sportTrigger">
+                    <span class="dropdown-icon">🎿</span>
+                    <span class="dropdown-text" id="sportText">Kaikki lajit</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <button class="filter-dropdown" id="channelTrigger">
+                    <span class="dropdown-icon">📺</span>
+                    <span class="dropdown-text" id="channelText">Kaikki kanavat</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+            </div>
 
-        <!-- Row 3: Date Rail -->
-        <div class="filter-row filter-row-dates">
-            <span class="date-label">Päivä:</span>
-            <div class="date-rail" id="dateRail">
-                <button class="date-pill active" data-date="all">Kaikki</button>
-                <!-- Dates populated by JS -->
+            <!-- Row 3: Date Rail -->
+            <div class="filter-row filter-row-dates">
+                <span class="date-label">Päivä:</span>
+                <div class="date-rail" id="dateRail">
+                    <button class="date-pill active" data-date="all">Kaikki</button>
+                    <!-- Dates populated by JS -->
+                </div>
+            </div>
+
+            <!-- Hidden selects for compatibility -->
+            <select class="visually-hidden" id="sportFilter"><option value="all">Kaikki</option></select>
+            <select class="visually-hidden" id="dateFilter"><option value="all">Kaikki</option></select>
+        </nav>
+
+        <!-- Filter Dropdown Panels -->
+        <div class="filter-panel" id="sportPanel">
+            <div class="panel-header">
+                <span class="panel-title">Valitse lajit</span>
+                <button class="panel-close" data-close="sportPanel">✕</button>
+            </div>
+            <div class="panel-options" id="sportOptions">
+                <!-- Populated by JS -->
+            </div>
+            <div class="panel-actions">
+                <button class="panel-btn secondary" data-action="clear-sport">Tyhjennä</button>
+                <button class="panel-btn primary" data-action="apply-sport">Valmis</button>
             </div>
         </div>
 
-        <!-- Hidden selects for compatibility -->
-        <select class="visually-hidden" id="sportFilter"><option value="all">Kaikki</option></select>
-        <select class="visually-hidden" id="dateFilter"><option value="all">Kaikki</option></select>
-    </nav>
+        <div class="filter-panel" id="channelPanel">
+            <div class="panel-header">
+                <span class="panel-title">Valitse kanavat</span>
+                <button class="panel-close" data-close="channelPanel">✕</button>
+            </div>
+            <div class="panel-options" id="channelOptions">
+                <label class="panel-option">
+                    <input type="checkbox" value="yle-tv1" checked>
+                    <span class="option-badge free">Yle TV1</span>
+                </label>
+                <label class="panel-option">
+                    <input type="checkbox" value="yle-tv2" checked>
+                    <span class="option-badge free">Yle TV2</span>
+                </label>
+                <label class="panel-option">
+                    <input type="checkbox" value="yle-areena" checked>
+                    <span class="option-badge free">Yle Areena</span>
+                </label>
+                <label class="panel-option">
+                    <input type="checkbox" value="tv5" checked>
+                    <span class="option-badge free">TV5</span>
+                </label>
+                <label class="panel-option">
+                    <input type="checkbox" value="hbo-max" checked>
+                    <span class="option-badge paid">HBO Max</span>
+                </label>
+                <label class="panel-option">
+                    <input type="checkbox" value="eurosport1" checked>
+                    <span class="option-badge paid">Eurosport</span>
+                </label>
+            </div>
+            <div class="panel-actions">
+                <button class="panel-btn secondary" data-action="clear-channel">Tyhjennä</button>
+                <button class="panel-btn primary" data-action="apply-channel">Valmis</button>
+            </div>
+        </div>
 
-    <!-- Filter Dropdown Panels -->
-    <div class="filter-panel" id="sportPanel">
-        <div class="panel-header">
-            <span class="panel-title">Valitse lajit</span>
-            <button class="panel-close" data-close="sportPanel">✕</button>
-        </div>
-        <div class="panel-options" id="sportOptions">
-            <!-- Populated by JS -->
-        </div>
-        <div class="panel-actions">
-            <button class="panel-btn secondary" data-action="clear-sport">Tyhjennä</button>
-            <button class="panel-btn primary" data-action="apply-sport">Valmis</button>
-        </div>
-    </div>
-
-    <div class="filter-panel" id="channelPanel">
-        <div class="panel-header">
-            <span class="panel-title">Valitse kanavat</span>
-            <button class="panel-close" data-close="channelPanel">✕</button>
-        </div>
-        <div class="panel-options" id="channelOptions">
-            <label class="panel-option">
-                <input type="checkbox" value="yle-tv1" checked>
-                <span class="option-badge free">Yle TV1</span>
-            </label>
-            <label class="panel-option">
-                <input type="checkbox" value="yle-tv2" checked>
-                <span class="option-badge free">Yle TV2</span>
-            </label>
-            <label class="panel-option">
-                <input type="checkbox" value="yle-areena" checked>
-                <span class="option-badge free">Yle Areena</span>
-            </label>
-            <label class="panel-option">
-                <input type="checkbox" value="tv5" checked>
-                <span class="option-badge free">TV5</span>
-            </label>
-            <label class="panel-option">
-                <input type="checkbox" value="hbo-max" checked>
-                <span class="option-badge paid">HBO Max</span>
-            </label>
-            <label class="panel-option">
-                <input type="checkbox" value="eurosport1" checked>
-                <span class="option-badge paid">Eurosport</span>
-            </label>
-        </div>
-        <div class="panel-actions">
-            <button class="panel-btn secondary" data-action="clear-channel">Tyhjennä</button>
-            <button class="panel-btn primary" data-action="apply-channel">Valmis</button>
-        </div>
-    </div>
-
-    <!-- Panel Backdrop -->
-    <div class="panel-backdrop" id="panelBackdrop"></div>
-
-    <!-- Main Content -->
-    <main class="main-content">
+        <!-- Panel Backdrop -->
+        <div class="panel-backdrop" id="panelBackdrop"></div>
 
         <!-- Schedule Section -->
         <section class="section schedule-section" id="schedule">
@@ -294,7 +291,6 @@
 
     </main>
 
-    </div><!-- End Content Wrapper -->
 
     <!-- Footer -->
     <footer class="footer">

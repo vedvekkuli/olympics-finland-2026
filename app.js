@@ -815,9 +815,8 @@ function populateSportOptions() {
 // ============================================
 function initStickyFilter() {
     const filterBar = document.getElementById('filterBar');
-    const hero = document.querySelector('.hero');
 
-    if (!filterBar || !hero) return;
+    if (!filterBar) return;
 
     // Create a placeholder to maintain layout when filter becomes fixed
     const placeholder = document.createElement('div');
@@ -830,8 +829,10 @@ function initStickyFilter() {
     let isFixed = false;
 
     function recalculatePosition() {
+        // Only recalculate when not fixed
         if (!isFixed) {
-            filterBarTop = filterBar.offsetTop;
+            const rect = filterBar.getBoundingClientRect();
+            filterBarTop = rect.top + window.scrollY;
             filterBarHeight = filterBar.offsetHeight;
         }
     }
@@ -839,7 +840,7 @@ function initStickyFilter() {
     function updateStickyState() {
         const scrollY = window.scrollY;
 
-        // Only become sticky after scrolling past the filter bar's original position
+        // Become sticky when scrolled past the filter bar's original position
         if (scrollY >= filterBarTop && !isFixed) {
             isFixed = true;
             filterBar.classList.add('is-fixed');
@@ -852,11 +853,17 @@ function initStickyFilter() {
         }
     }
 
-    // Wait for layout to settle, then calculate position
-    requestAnimationFrame(() => {
+    // Wait for page to fully load before calculating position
+    window.addEventListener('load', () => {
         recalculatePosition();
         updateStickyState();
     });
+
+    // Also try after a short delay (for fonts, images, etc.)
+    setTimeout(() => {
+        recalculatePosition();
+        updateStickyState();
+    }, 100);
 
     // Listen to scroll
     window.addEventListener('scroll', updateStickyState, { passive: true });
