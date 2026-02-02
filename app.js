@@ -825,39 +825,38 @@ function initStickyFilter() {
     placeholder.style.display = 'none';
     filterBar.parentNode.insertBefore(placeholder, filterBar.nextSibling);
 
-    // Get filter bar's natural position
-    let filterBarTop = filterBar.offsetTop;
-    let filterBarHeight = filterBar.offsetHeight;
+    let filterBarTop = 0;
+    let filterBarHeight = 0;
     let isFixed = false;
 
-    function updateStickyState() {
-        const scrollY = window.scrollY;
-
-        // Recalculate position if not fixed (in case of layout changes)
+    function recalculatePosition() {
         if (!isFixed) {
             filterBarTop = filterBar.offsetTop;
             filterBarHeight = filterBar.offsetHeight;
         }
+    }
 
+    function updateStickyState() {
+        const scrollY = window.scrollY;
+
+        // Only become sticky after scrolling past the filter bar's original position
         if (scrollY >= filterBarTop && !isFixed) {
-            // Switch to fixed
             isFixed = true;
             filterBar.classList.add('is-fixed');
             placeholder.style.display = 'block';
             placeholder.style.height = filterBarHeight + 'px';
         } else if (scrollY < filterBarTop && isFixed) {
-            // Switch back to normal
             isFixed = false;
             filterBar.classList.remove('is-fixed');
             placeholder.style.display = 'none';
         }
-
-        // Visual feedback when scrolled
-        filterBar.classList.toggle('scrolled', scrollY > hero.offsetHeight);
     }
 
-    // Initial check
-    updateStickyState();
+    // Wait for layout to settle, then calculate position
+    requestAnimationFrame(() => {
+        recalculatePosition();
+        updateStickyState();
+    });
 
     // Listen to scroll
     window.addEventListener('scroll', updateStickyState, { passive: true });
@@ -865,10 +864,38 @@ function initStickyFilter() {
     // Recalculate on resize
     window.addEventListener('resize', () => {
         if (!isFixed) {
-            filterBarTop = filterBar.offsetTop;
-            filterBarHeight = filterBar.offsetHeight;
+            recalculatePosition();
         }
     });
+}
+
+// ============================================
+// AUTO-SELECT CURRENT DATE DURING OLYMPICS
+// ============================================
+function autoSelectCurrentDate() {
+    const today = new Date();
+    const olympicsStart = new Date('2026-02-06');
+    const olympicsEnd = new Date('2026-02-22');
+
+    // Check if we're during the Olympics
+    if (today >= olympicsStart && today <= olympicsEnd) {
+        const todayStr = today.toISOString().split('T')[0]; // YYYY-MM-DD format
+
+        // Find and click the matching date pill
+        const datePill = document.querySelector(`.date-pill[data-date="${todayStr}"]`);
+        if (datePill) {
+            document.querySelectorAll('.date-pill').forEach(p => p.classList.remove('active'));
+            datePill.classList.add('active');
+
+            const dateFilter = document.getElementById('dateFilter');
+            if (dateFilter) dateFilter.value = todayStr;
+
+            renderSchedule();
+
+            // Scroll the date rail to show the active date
+            datePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+    }
 }
 
 // ============================================
@@ -878,5 +905,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initCountdown();
     initFilters();
     initStickyFilter();
-    loadData();
+    loadData().then(() => {
+        // Auto-select current date if during Olympics
+        autoSelectCurrentDate();
+    });
 });
