@@ -206,7 +206,7 @@ function renderSchedule() {
                     ${medalCount > 0 ? `
                         <div class="day-medals">
                             <span>🏅</span>
-                            <span>${medalCount} mitali${medalCount > 1 ? 'a' : ''}</span>
+                            <span>${medalCount} loppukilpailu${medalCount > 1 ? 'a' : ''}</span>
                         </div>
                     ` : ''}
                 </div>
