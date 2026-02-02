@@ -1637,8 +1637,9 @@ body {
         left: 50%;
         transform: translateX(-50%);
         right: auto;
+        /* Match main-content width: max-width 1200px - padding 32px (2x16px on tablet) */
         width: calc(100% - 32px);
-        max-width: 1136px;
+        max-width: calc(1200px - 32px);
         border-radius: 0 0 12px 12px;
         border-top: none;
     }
@@ -1894,16 +1895,16 @@ body {
 }
 
 @media (min-width: 1024px) {
-    /* Desktop: consistent sizing for sticky and non-sticky */
+    /* Desktop: filter bar matches main-content inner width exactly */
+    /* main-content: max-width 1200px, padding 3rem (48px) each side = 1104px inner */
     .filter-bar {
-        max-width: 1136px;
-        margin-left: auto;
-        margin-right: auto;
+        /* No max-width needed - inherits from parent container */
     }
 
     .filter-bar.is-fixed {
-        max-width: 1136px;
-        width: calc(100% - 64px);
+        /* Match main-content's inner width: min(1200px, 100vw) - 96px */
+        max-width: calc(1200px - 96px);
+        width: calc(100% - 96px);
         left: 50%;
         transform: translateX(-50%);
     }
