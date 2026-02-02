@@ -1602,19 +1602,19 @@ body {
 
     /* Filter bar tablet adjustments */
     .filter-bar {
-        max-width: 800px;
-        margin: 0 auto;
-        border-radius: 0 0 16px 16px;
-        border-left: 1px solid var(--border-color);
-        border-right: 1px solid var(--border-color);
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        margin-bottom: var(--space-lg);
     }
 
     .filter-bar.is-fixed {
         left: 50%;
         transform: translateX(-50%);
         right: auto;
-        width: 800px;
-        max-width: calc(100vw - 32px);
+        width: calc(100% - 32px);
+        max-width: 1168px; /* matches main-content max-width minus padding */
+        border-radius: 0 0 12px 12px;
+        border-top: none;
     }
 
     .filter-row {
@@ -1864,13 +1864,8 @@ body {
 }
 
 @media (min-width: 1024px) {
-    .filter-bar {
-        max-width: 1000px;
-    }
-
     .filter-bar.is-fixed {
-        width: 1000px;
-        max-width: calc(100vw - 64px);
+        max-width: 1168px;
     }
 
     .filter-row {
@@ -1879,22 +1874,24 @@ body {
 
     .filter-row-toggles,
     .filter-row-dropdowns {
-        justify-content: center;
+        justify-content: flex-start;
         gap: 16px;
     }
 
     .filter-toggle,
     .filter-dropdown {
-        flex: 0 1 280px;
+        flex: 0 0 auto;
+        min-width: 200px;
+        max-width: 280px;
     }
 
     .date-pill {
-        min-width: 52px;
-        height: 52px;
+        min-width: 48px;
+        height: 48px;
     }
 
     .date-pill .date-num {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 }
 
