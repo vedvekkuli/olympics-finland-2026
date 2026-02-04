@@ -985,9 +985,9 @@ body {
 
 /* Sport Label - smallest, muted */
 .event-sport {
-    font-size: 0.625rem;
+    font-size: 0.6875rem;
     font-weight: 600;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.03em;
     line-height: 1.2;
