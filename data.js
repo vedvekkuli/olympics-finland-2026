@@ -208,7 +208,7 @@ const olympicSchedule = [
         day: 'Ke',
         label: 'Kilpailut alkavat',
         events: [
-            { time: '20:05', sport: 'curling', name: 'Sekajoukkue, alkusarja', detail: '🇸🇪–🇰🇷, 🇬🇧–🇳🇴, 🇨🇦–🇨🇿, 🇪🇪–🇨🇭', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] }
+            { time: '20:05', sport: 'curling', name: 'Sekajoukkue, alkusarja', detail: '🇸🇪–🇰🇷, 🇬🇧–🇳🇴, 🇨🇦–🇨🇿, 🇪🇪–🇨🇭', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] }
         ]
     },
     // ========== TORSTAI 5.2. ==========

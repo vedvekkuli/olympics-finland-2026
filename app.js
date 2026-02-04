@@ -85,7 +85,8 @@ function populateSportFilter() {
         'short-track': { name: '⛸️ Short track', finnish: false },
         'kelkkailu': { name: '🛷 Kelkkailu', finnish: false },
         'rattikelkkailu': { name: '🛷 Rattikelkkailu', finnish: false },
-        'skeleton': { name: '💀 Skeleton', finnish: false }
+        'skeleton': { name: '💀 Skeleton', finnish: false },
+        'vuorihiihto': { name: '🎿 Vuorihiihto', finnish: false }
     };
 
     // Sort: Finnish sports first
@@ -230,7 +231,8 @@ function renderSchedule() {
                             'kelkkailu': '🛷',
                             'rattikelkkailu': '🛷',
                             'skeleton': '💀',
-                            'seremonia': '🎭'
+                            'seremonia': '🎭',
+                            'vuorihiihto': '🎿'
                         };
                         const sportNames = {
                             'maastohiihto': 'Maastohiihto',
@@ -250,7 +252,8 @@ function renderSchedule() {
                             'kelkkailu': 'Kelkkailu',
                             'rattikelkkailu': 'Rattikelkkailu',
                             'skeleton': 'Skeleton',
-                            'seremonia': 'Seremonia'
+                            'seremonia': 'Seremonia',
+                            'vuorihiihto': 'Vuorihiihto'
                         };
 
                         // Build cleaner event HTML
@@ -771,7 +774,8 @@ function populateSportOptions() {
         'short-track': '⛸️ Short track',
         'kelkkailu': '🛷 Kelkkailu',
         'rattikelkkailu': '🛷 Rattikelkkailu',
-        'skeleton': '💀 Skeleton'
+        'skeleton': '💀 Skeleton',
+        'vuorihiihto': '🎿 Vuorihiihto'
     };
 
     optionsContainer.innerHTML = '';
