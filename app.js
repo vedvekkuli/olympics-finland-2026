@@ -154,7 +154,7 @@ function renderSchedule() {
 
     // Use the new multi-select filters
     const sportFilterActive = selectedSports.size > 0;
-    const channelFilterActive = selectedChannels.size < 6; // Not all selected
+    const channelFilterActive = selectedChannels.size < 5; // Not all selected
 
     let html = '';
     let hasResults = false;
@@ -267,14 +267,12 @@ function renderSchedule() {
                             'yle-tv2': 'Yle TV2',
                             'yle-areena': 'Yle Areena',
                             'hbo-max': 'HBO Max',
-                            'eurosport1': 'Eurosport',
-                            'tv5': 'TV5'
+                            'eurosport1': 'Eurosport'
                         };
                         const channelTypes = {
                             'yle-tv1': 'free',
                             'yle-tv2': 'free',
                             'yle-areena': 'free',
-                            'tv5': 'free',
                             'hbo-max': 'paid',
                             'eurosport1': 'paid'
                         };
@@ -533,7 +531,7 @@ function initCountdown() {
 // FILTER INITIALIZATION
 // ============================================
 let selectedSports = new Set();
-let selectedChannels = new Set(['yle-tv1', 'yle-tv2', 'yle-areena', 'tv5', 'hbo-max', 'eurosport1']);
+let selectedChannels = new Set(['yle-tv1', 'yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1']);
 
 function initFilters() {
     const finnishOnly = document.getElementById('finnishOnly');
@@ -681,7 +679,7 @@ function updateSportCount() {
 function updateChannelCount() {
     const trigger = document.getElementById('channelTrigger');
     const textEl = document.getElementById('channelText');
-    const allChannels = 6;
+    const allChannels = 5;
 
     trigger?.classList.toggle('active', selectedChannels.size < allChannels);
 
@@ -694,7 +692,6 @@ function updateChannelCount() {
                 'yle-tv1': 'Yle TV1',
                 'yle-tv2': 'Yle TV2',
                 'yle-areena': 'Yle Areena',
-                'tv5': 'TV5',
                 'hbo-max': 'HBO Max',
                 'eurosport1': 'Eurosport'
             };
