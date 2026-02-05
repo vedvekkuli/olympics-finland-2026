@@ -260,26 +260,26 @@ function renderSchedule() {
                         // Show actual broadcast channels
                         const broadcasts = event.broadcasts || [];
                         const channelNames = {
-                            'yle-tv1': 'Yle TV1',
                             'yle-tv2': 'Yle TV2',
                             'yle-areena': 'Yle Areena',
                             'hbo-max': 'HBO Max',
                             'eurosport1': 'Eurosport'
                         };
                         const channelTypes = {
-                            'yle-tv1': 'free',
                             'yle-tv2': 'free',
                             'yle-areena': 'free',
                             'hbo-max': 'paid',
                             'eurosport1': 'paid'
                         };
 
-                        // Show up to 3 channels
-                        const broadcastTags = broadcasts.slice(0, 3).map(bId => {
-                            const name = channelNames[bId] || bId;
-                            const type = channelTypes[bId] || 'paid';
-                            return `<span class="bc-tag ${type}">${name}</span>`;
-                        }).join('');
+                        // Helper to build broadcast tags
+                        const buildBroadcastTags = (bcList) => {
+                            return bcList.slice(0, 3).map(bId => {
+                                const name = channelNames[bId] || bId;
+                                const type = channelTypes[bId] || 'paid';
+                                return `<span class="bc-tag ${type}">${name}</span>`;
+                            }).join('');
+                        };
 
                         const detailText = event.detail || '';
 
@@ -291,6 +291,25 @@ function renderSchedule() {
                             ? `<div class="event-indicators">${indicators.join('')}</div>`
                             : '';
 
+                        // Handle matchBroadcasts for curling (multiple matches with different channels)
+                        let detailHtml = '';
+                        if (event.matchBroadcasts && event.matchBroadcasts.length > 0) {
+                            // Show each match group on its own row with its broadcasts
+                            detailHtml = event.matchBroadcasts.map(mb => `
+                                <div class="match-row">
+                                    <span class="match-detail">${mb.match}</span>
+                                    <span class="match-bc">${buildBroadcastTags(mb.broadcasts)}</span>
+                                </div>
+                            `).join('');
+                        } else {
+                            // Standard display
+                            const broadcastTags = buildBroadcastTags(broadcasts);
+                            detailHtml = `
+                                ${detailText ? `<span class="event-detail">${detailText}</span>` : ''}
+                                <div class="event-bc">${broadcastTags}</div>
+                            `;
+                        }
+
                         return `
                             <div class="event-item ${event.finnish ? 'finnish' : ''} ${event.medal ? 'medal' : ''}">
                                 ${indicatorHtml}
@@ -301,9 +320,8 @@ function renderSchedule() {
                                     </div>
                                     <div class="event-main">
                                         <span class="event-name">${event.name}</span>
-                                        ${detailText ? `<span class="event-detail">${detailText}</span>` : ''}
+                                        ${detailHtml}
                                     </div>
-                                    <div class="event-bc">${broadcastTags}</div>
                                 </div>
                             </div>
                         `;

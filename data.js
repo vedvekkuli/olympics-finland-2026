@@ -208,7 +208,10 @@ const olympicSchedule = [
             { time: '15:35', sport: 'curling', name: 'Sekajoukkue, alkusarja', detail: '🇺🇸–🇨🇭, 🇳🇴–🇨🇦', medal: false, finnish: false, broadcasts: ['hbo-max'] },
             { time: '15:40', sport: 'jaakiekko-naiset', name: '🇮🇹–🇫🇷', detail: 'B-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '17:40', sport: 'jaakiekko-naiset', name: '🇺🇸–🇨🇿', detail: 'A-lohko', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
-            { time: '20:05', sport: 'curling', name: 'Sekajoukkue, alkusarja', detail: '🇨🇦–🇮🇹, 🇨🇭–🇰🇷, 🇪🇪–🇸🇪, 🇨🇿–🇩🇪', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
+            { time: '20:05', sport: 'curling', name: 'Sekajoukkue, alkusarja', medal: false, finnish: false, broadcasts: ['hbo-max'], matchBroadcasts: [
+                { match: '🇨🇦–🇮🇹', broadcasts: ['yle-areena', 'hbo-max'] },
+                { match: '🇨🇭–🇰🇷, 🇪🇪–🇸🇪, 🇨🇿–🇩🇪', broadcasts: ['hbo-max'] }
+            ] },
             { time: '20:30', sport: 'lumilautailu', name: 'M Big Air, karsinta', detail: 'Rene Rinnekangas', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '22:10', sport: 'jaakiekko-naiset', name: '🇫🇮–🇨🇦', detail: 'A-lohko', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] }
         ]
@@ -221,7 +224,10 @@ const olympicSchedule = [
         special: true,
         events: [
             { time: '10:55', sport: 'taitoluistelu', name: 'Joukkuekilpailu, jäätanssi', detail: 'Rytmitanssi', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
-            { time: '11:05', sport: 'curling', name: 'Sekajoukkue, alkusarja', detail: '🇸🇪–🇬🇧, 🇮🇹–🇨🇭, 🇺🇸–🇨🇦', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
+            { time: '11:05', sport: 'curling', name: 'Sekajoukkue, alkusarja', medal: false, finnish: false, broadcasts: ['hbo-max'], matchBroadcasts: [
+                { match: '🇸🇪–🇬🇧', broadcasts: ['yle-areena', 'hbo-max'] },
+                { match: '🇮🇹–🇨🇭, 🇺🇸–🇨🇦', broadcasts: ['hbo-max'] }
+            ] },
             { time: '12:35', sport: 'taitoluistelu', name: 'Joukkuekilpailu, pariluistelu', detail: '', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '13:10', sport: 'jaakiekko-naiset', name: '🇫🇷–🇯🇵', detail: 'B-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '14:35', sport: 'taitoluistelu', name: 'Joukkuekilpailu, N yksinluistelu', detail: 'Lyhytohjelma', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
@@ -237,13 +243,19 @@ const olympicSchedule = [
         label: 'Ensimmäiset loppukilpailut',
         special: true,
         events: [
-            { time: '11:05', sport: 'curling', name: 'Sekajoukkue, alkusarja', detail: '🇬🇧–🇨🇦, 🇨🇭–🇸🇪', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
+            { time: '11:05', sport: 'curling', name: 'Sekajoukkue, alkusarja', medal: false, finnish: false, broadcasts: ['hbo-max'], matchBroadcasts: [
+                { match: '🇬🇧–🇨🇦', broadcasts: ['yle-areena', 'hbo-max'] },
+                { match: '🇨🇭–🇸🇪', broadcasts: ['hbo-max'] }
+            ] },
             { time: '11:30', sport: 'freestylehiihto', name: 'N Slopestyle, karsinta', detail: 'Anni Kärävä', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '12:30', sport: 'alppihiihto', name: 'M Syöksylasku', detail: 'Elian Lehto', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1'] },
             { time: '13:10', sport: 'jaakiekko-naiset', name: '🇩🇪–🇯🇵', detail: 'B-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '14:00', sport: 'maastohiihto', name: 'N Yhdistelmäkilpailu 20 km', detail: 'Kaikki suomalaisnaiset', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '15:00', sport: 'freestylehiihto', name: 'M Slopestyle, karsinta', detail: '', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
-            { time: '15:35', sport: 'curling', name: 'Sekajoukkue, alkusarja', detail: '🇪🇪–🇳🇴, 🇨🇿–🇰🇷, 🇸🇪–🇮🇹, 🇬🇧–🇺🇸', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
+            { time: '15:35', sport: 'curling', name: 'Sekajoukkue, alkusarja', medal: false, finnish: false, broadcasts: ['hbo-max'], matchBroadcasts: [
+                { match: '🇸🇪–🇮🇹', broadcasts: ['yle-areena', 'hbo-max'] },
+                { match: '🇪🇪–🇳🇴, 🇨🇿–🇰🇷, 🇬🇧–🇺🇸', broadcasts: ['hbo-max'] }
+            ] },
             { time: '15:40', sport: 'jaakiekko-naiset', name: '🇸🇪–🇮🇹', detail: 'B-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '17:00', sport: 'pikaluistelu', name: 'N 3000 m', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '17:00', sport: 'kelkkailu', name: 'M Yksikkö, laskut 1-2', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
@@ -263,13 +275,19 @@ const olympicSchedule = [
         label: '',
         events: [
             { time: '10:00', sport: 'lumilautailu', name: 'Parisuurpujottelu, karsinnat', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
-            { time: '11:05', sport: 'curling', name: 'Sekajoukkue, alkusarja', detail: '🇳🇴–🇨🇿, 🇰🇷–🇪🇪', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
+            { time: '11:05', sport: 'curling', name: 'Sekajoukkue, alkusarja', medal: false, finnish: false, broadcasts: ['hbo-max'], matchBroadcasts: [
+                { match: '🇳🇴–🇨🇿', broadcasts: ['yle-tv2', 'hbo-max'] },
+                { match: '🇰🇷–🇪🇪', broadcasts: ['hbo-max'] }
+            ] },
             { time: '12:30', sport: 'alppihiihto', name: 'N Syöksylasku', detail: 'Rosa Pohjolainen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1'] },
             { time: '13:30', sport: 'maastohiihto', name: 'M Yhdistelmäkilpailu 20 km', detail: 'Iivo Niskanen ym.', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '14:00', sport: 'lumilautailu', name: 'Parisuurpujottelu, erävaihe', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '15:05', sport: 'ampumahiihto', name: 'Sekajoukkueviesti 4x6 km', detail: 'Suomen joukkue', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '15:29', sport: 'lumilautailu', name: 'Parisuurpujottelu, N finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
-            { time: '15:35', sport: 'curling', name: 'Sekajoukkue, alkusarja', detail: '🇨🇦–🇸🇪, 🇬🇧–🇨🇭, 🇺🇸–🇪🇪, 🇮🇹–🇨🇿', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
+            { time: '15:35', sport: 'curling', name: 'Sekajoukkue, alkusarja', medal: false, finnish: false, broadcasts: ['hbo-max'], matchBroadcasts: [
+                { match: '🇨🇦–🇸🇪', broadcasts: ['yle-areena', 'hbo-max'] },
+                { match: '🇬🇧–🇨🇭, 🇺🇸–🇪🇪, 🇮🇹–🇨🇿', broadcasts: ['hbo-max'] }
+            ] },
             { time: '15:39', sport: 'lumilautailu', name: 'Parisuurpujottelu, M finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '17:00', sport: 'pikaluistelu', name: 'M 5000 m', detail: '', medal: true, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '17:40', sport: 'jaakiekko-naiset', name: '🇫🇷–🇸🇪', detail: 'B-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
