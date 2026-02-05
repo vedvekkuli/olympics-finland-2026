@@ -153,7 +153,7 @@ function renderSchedule() {
 
     // Use the new multi-select filters
     const sportFilterActive = selectedSports.size > 0;
-    const channelFilterActive = selectedChannels.size < 5; // Not all selected
+    const channelFilterActive = selectedChannels.size < 4; // Not all selected
 
     let html = '';
     let hasResults = false;
@@ -491,7 +491,7 @@ function renderAthletes() {
 // FILTER INITIALIZATION
 // ============================================
 let selectedSports = new Set();
-let selectedChannels = new Set(['yle-tv1', 'yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1']);
+let selectedChannels = new Set(['yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1']);
 
 function initFilters() {
     const finnishOnly = document.getElementById('finnishOnly');
@@ -638,7 +638,7 @@ function updateSportCount() {
 function updateChannelCount() {
     const trigger = document.getElementById('channelTrigger');
     const textEl = document.getElementById('channelText');
-    const allChannels = 5;
+    const allChannels = 4;
 
     trigger?.classList.toggle('active', selectedChannels.size < allChannels);
 
@@ -648,7 +648,6 @@ function updateChannelCount() {
             textEl.textContent = 'Kaikki kanavat';
         } else if (selectedChannels.size === 1) {
             const channelNames = {
-                'yle-tv1': 'Yle TV1',
                 'yle-tv2': 'Yle TV2',
                 'yle-areena': 'Yle Areena',
                 'hbo-max': 'HBO Max',
