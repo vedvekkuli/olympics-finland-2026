@@ -1075,9 +1075,10 @@ body {
 }
 
 .match-detail {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     color: var(--text-secondary);
     flex: 1;
+    line-height: 1.4;
 }
 
 .match-bc {
@@ -1087,8 +1088,9 @@ body {
 }
 
 .flag-emoji {
-    font-size: 1.25em;
-    vertical-align: middle;
+    font-size: 1.125rem;
+    vertical-align: -0.1em;
+    line-height: 1;
 }
 
 .event-venue {
