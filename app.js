@@ -328,7 +328,7 @@ function renderSchedule() {
                                         <span class="event-sport">${sportIcon} ${sportLabel}</span>
                                     </div>
                                     <div class="event-main">
-                                        <span class="event-name">${event.name}</span>
+                                        <span class="event-name">${wrapFlagEmojis(event.name)}</span>
                                         ${detailHtml}
                                     </div>
                                 </div>
