@@ -148,7 +148,6 @@ function renderSchedule() {
     const scheduleList = document.getElementById('scheduleList');
     if (!scheduleList) return;
 
-    const dateFilter = document.getElementById('dateFilter')?.value || 'all';
     const finnishOnly = document.getElementById('finnishOnly')?.checked || false;
     const medalsOnly = document.getElementById('medalsOnly')?.checked || false;
 
@@ -160,8 +159,6 @@ function renderSchedule() {
     let hasResults = false;
 
     state.schedule.forEach(day => {
-        // Date filter
-        if (dateFilter !== 'all' && day.date !== dateFilter) return;
 
         // Filter events
         const filteredEvents = day.events.filter(event => {
@@ -284,12 +281,7 @@ function renderSchedule() {
                             return `<span class="bc-tag ${type}">${name}</span>`;
                         }).join('');
 
-                        // Format detail - truncate curling matches
-                        let detailText = event.detail || '';
-                        if (event.sport === 'curling' && detailText.length > 40) {
-                            const matches = detailText.split(', ');
-                            detailText = matches.slice(0, 2).join(', ') + (matches.length > 2 ? ` +${matches.length - 2}` : '');
-                        }
+                        const detailText = event.detail || '';
 
                         // Build indicator badges for top-right corner
                         const indicators = [];
@@ -496,38 +488,6 @@ function renderAthletes() {
 }
 
 // ============================================
-// COUNTDOWN
-// ============================================
-function initCountdown() {
-    const targetDate = new Date('2026-02-06T20:00:00+01:00').getTime();
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-
-        if (distance < 0) {
-            document.getElementById('countdown').innerHTML = '<p style="color: var(--ring-green); font-weight: 600;">Kisat käynnissä!</p>';
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-        const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
-        const minutesEl = document.getElementById('minutes');
-
-        if (daysEl) daysEl.textContent = days;
-        if (hoursEl) hoursEl.textContent = hours;
-        if (minutesEl) minutesEl.textContent = minutes;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 60000);
-}
-
-// ============================================
 // FILTER INITIALIZATION
 // ============================================
 let selectedSports = new Set();
@@ -585,19 +545,18 @@ function initFilters() {
         closeAllPanels();
     });
 
-    // Date rail clicks
+    // Date rail clicks - scroll to day (all days remain visible)
     document.getElementById('dateRail')?.addEventListener('click', (e) => {
         const pill = e.target.closest('.date-pill');
         if (pill) {
             document.querySelectorAll('.date-pill').forEach(p => p.classList.remove('active'));
             pill.classList.add('active');
-            const dateFilter = document.getElementById('dateFilter');
-            if (dateFilter) dateFilter.value = pill.dataset.date;
-            renderSchedule();
 
-            // Scroll to day if not "all"
+            // Scroll to the selected day, or to top if "all"
             if (pill.dataset.date !== 'all') {
                 scrollToDay(pill.dataset.date);
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
     });
@@ -889,26 +848,43 @@ function initStickyFilter() {
 // ============================================
 function autoSelectCurrentDate() {
     const today = new Date();
-    const olympicsStart = new Date('2026-02-06');
-    const olympicsEnd = new Date('2026-02-22');
+    today.setHours(12, 0, 0, 0); // Normalize to noon to avoid timezone issues
+    const todayStr = today.toISOString().split('T')[0]; // YYYY-MM-DD format
 
-    // Check if we're during the Olympics
-    if (today >= olympicsStart && today <= olympicsEnd) {
-        const todayStr = today.toISOString().split('T')[0]; // YYYY-MM-DD format
+    // Find the best date to select:
+    // 1. If today matches a schedule day, use it
+    // 2. Otherwise, find the closest future day (or the last day if Olympics are over)
+    let targetDate = null;
 
-        // Find and click the matching date pill
-        const datePill = document.querySelector(`.date-pill[data-date="${todayStr}"]`);
+    const scheduleDates = state.schedule.map(day => day.date);
+
+    if (scheduleDates.includes(todayStr)) {
+        // Today is in the schedule
+        targetDate = todayStr;
+    } else {
+        // Find the first future date in the schedule
+        const futureDate = scheduleDates.find(date => date > todayStr);
+        if (futureDate) {
+            targetDate = futureDate;
+        } else if (scheduleDates.length > 0) {
+            // Olympics are over, select the last day
+            targetDate = scheduleDates[scheduleDates.length - 1];
+        }
+    }
+
+    if (targetDate) {
+        const datePill = document.querySelector(`.date-pill[data-date="${targetDate}"]`);
         if (datePill) {
             document.querySelectorAll('.date-pill').forEach(p => p.classList.remove('active'));
             datePill.classList.add('active');
 
-            const dateFilter = document.getElementById('dateFilter');
-            if (dateFilter) dateFilter.value = todayStr;
-
-            renderSchedule();
-
             // Scroll the date rail to show the active date
-            datePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            datePill.scrollIntoView({ behavior: 'instant', inline: 'center', block: 'nearest' });
+
+            // Scroll to the day in the schedule after a short delay (to let the page render)
+            setTimeout(() => {
+                scrollToDay(targetDate);
+            }, 100);
         }
     }
 }
@@ -917,11 +893,10 @@ function autoSelectCurrentDate() {
 // INITIALIZATION
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-    initCountdown();
     initFilters();
     initStickyFilter();
     loadData().then(() => {
-        // Auto-select current date if during Olympics
+        // Auto-select current date (or closest future date)
         autoSelectCurrentDate();
     });
 });
