@@ -1086,6 +1086,11 @@ body {
     flex-shrink: 0;
 }
 
+.flag-emoji {
+    font-size: 1.25em;
+    vertical-align: middle;
+}
+
 .event-venue {
     font-size: 0.75rem;
     color: var(--text-muted);

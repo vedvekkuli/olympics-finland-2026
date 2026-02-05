@@ -14,6 +14,14 @@ let state = {
 };
 
 // ============================================
+// UTILITIES
+// ============================================
+function wrapFlagEmojis(text) {
+    // Match country flag emojis (regional indicator symbols)
+    return text.replace(/([\u{1F1E6}-\u{1F1FF}]{2})/gu, '<span class="flag-emoji">$1</span>');
+}
+
+// ============================================
 // DATA LOADING
 // ============================================
 async function loadData() {
@@ -297,15 +305,16 @@ function renderSchedule() {
                             // Show each match group on its own row with its broadcasts
                             detailHtml = event.matchBroadcasts.map(mb => `
                                 <div class="match-row">
-                                    <span class="match-detail">${mb.match}</span>
+                                    <span class="match-detail">${wrapFlagEmojis(mb.match)}</span>
                                     <span class="match-bc">${buildBroadcastTags(mb.broadcasts)}</span>
                                 </div>
                             `).join('');
                         } else {
                             // Standard display
                             const broadcastTags = buildBroadcastTags(broadcasts);
+                            const wrappedDetail = detailText ? wrapFlagEmojis(detailText) : '';
                             detailHtml = `
-                                ${detailText ? `<span class="event-detail">${detailText}</span>` : ''}
+                                ${wrappedDetail ? `<span class="event-detail">${wrappedDetail}</span>` : ''}
                                 <div class="event-bc">${broadcastTags}</div>
                             `;
                         }
