@@ -126,7 +126,7 @@ const finnishAthletes = {
         defense: ['Jenni Hiirikoski', 'Sini Karjalainen', 'Nelli Laitinen', 'Sanni Rantala', 'Ronja Savolainen', 'Elli Suoranta', 'Siiri Yrjölä'],
         forwards: ['Elisa Holopainen', 'Michelle Karvinen', 'Ida Kuoppala', 'Julia Liikala', 'Petra Nieminen', 'Emma Nuutinen', 'Jenniina Nylund', 'Julia Schalin', 'Susanna Tapani', 'Noora Tulus', 'Viivi Vainikka', 'Sanni Vanhanen', 'Emilia Vesa'],
         matches: [
-            { date: 'To 5.2.', time: '22:10', opponent: '🇨🇦 Kanada', group: 'A' },
+            { date: 'To 12.2.', time: '14:30', opponent: '🇨🇦 Kanada', group: 'A', note: 'Siirretty noroviruksen vuoksi' },
             { date: 'La 7.2.', time: '17:40', opponent: '🇺🇸 USA', group: 'A' },
             { date: 'Su 8.2.', time: '22:10', opponent: '🇨🇿 Tshekki', group: 'A' },
             { date: 'Ti 10.2.', time: '22:10', opponent: '🇨🇭 Sveitsi', group: 'A' }
@@ -201,7 +201,7 @@ const olympicSchedule = [
     {
         date: '2026-02-05',
         day: 'To',
-        label: 'Naisleijonat aloittaa',
+        label: 'Kilpailut alkavat',
         events: [
             { time: '11:05', sport: 'curling', name: 'Sekajoukkue, alkusarja', detail: '🇸🇪–🇨🇿, 🇳🇴–🇺🇸, 🇰🇷–🇮🇹', medal: false, finnish: false, broadcasts: ['hbo-max'] },
             { time: '13:10', sport: 'jaakiekko-naiset', name: '🇸🇪–🇩🇪', detail: 'B-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-76773885' },
@@ -212,8 +212,7 @@ const olympicSchedule = [
                 { match: '🇨🇦–🇮🇹', broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
                 { match: '🇨🇭–🇰🇷, 🇪🇪–🇸🇪, 🇨🇿–🇩🇪', broadcasts: ['hbo-max'] }
             ] },
-            { time: '20:30', sport: 'lumilautailu', name: 'M Big Air, karsinta', detail: 'Rene Rinnekangas', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-76773898' },
-            { time: '22:10', sport: 'jaakiekko-naiset', name: '🇫🇮–🇨🇦', detail: 'A-lohko', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-76773901' }
+            { time: '20:30', sport: 'lumilautailu', name: 'M Big Air, karsinta', detail: 'Rene Rinnekangas', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-76773898' }
         ]
     },
     // ========== PERJANTAI 6.2. - AVAJAISET ==========
@@ -392,6 +391,7 @@ const olympicSchedule = [
             { time: '13:10', sport: 'jaakiekko-miehet', name: '🇨🇭–🇫🇷', detail: 'A-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77067588' },
             { time: '13:15', sport: 'freestylehiihto', name: 'M Kumparelasku, finaali', detail: 'Suomen kumparelaskijat?', medal: true, finnish: true, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77067593' },
             { time: '14:00', sport: 'maastohiihto', name: 'N 10 km (v)', detail: 'Krista Pärmäkoski ym.', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77067596', yletv2Url: 'https://areena.yle.fi/1-76768165' },
+            { time: '14:30', sport: 'jaakiekko-naiset', name: '🇫🇮–🇨🇦', detail: 'A-lohko (siirretty 5.2. noroviruksen vuoksi)', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '14:45', sport: 'lumilautailu', name: 'M Lumilautakrossi, erävaihe', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77067601' },
             { time: '15:05', sport: 'curling', name: 'M Alkusarja', detail: '🇳🇴–🇩🇪, 🇺🇸–🇨🇭, 🇬🇧–🇸🇪', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '16:01', sport: 'lumilautailu', name: 'M Lumilautakrossi, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
