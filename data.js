@@ -279,7 +279,7 @@ const olympicSchedule = [
                 { match: '🇰🇷–🇪🇪', broadcasts: ['hbo-max'] }
             ] },
             { time: '12:30', sport: 'alppihiihto', name: 'N Syöksylasku', detail: 'Rosa Pohjolainen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1'], yleareenanUrl: 'https://areena.yle.fi/1-76892654' },
-            { time: '13:30', sport: 'maastohiihto', name: 'M Yhdistelmäkilpailu 20 km', detail: 'Iivo Niskanen ym.', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768177' },
+            { time: '13:30', sport: 'maastohiihto', name: 'M Yhdistelmäkilpailu 20 km', detail: 'Ristomatti Hakola, Niko Anttola, Arsi Ruuskanen, Iivo Niskanen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768177' },
             { time: '14:00', sport: 'lumilautailu', name: 'Parisuurpujottelu, erävaihe', detail: '', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-76892657' },
             { time: '15:05', sport: 'ampumahiihto', name: 'Sekajoukkueviesti 4x6 km', detail: 'Suomen joukkue', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768441' },
             { time: '15:29', sport: 'lumilautailu', name: 'Parisuurpujottelu, N finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
