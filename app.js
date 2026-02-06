@@ -280,11 +280,24 @@ function renderSchedule() {
                             'eurosport1': 'paid'
                         };
 
-                        // Helper to build broadcast tags
+                        // Helper to build broadcast tags with links
                         const buildBroadcastTags = (bcList) => {
                             return bcList.slice(0, 3).map(bId => {
                                 const name = channelNames[bId] || bId;
                                 const type = channelTypes[bId] || 'paid';
+                                let url = '';
+                                if (bId === 'yle-areena') {
+                                    url = event.yleareenanUrl || 'https://areena.yle.fi';
+                                } else if (bId === 'yle-tv2') {
+                                    url = event.yletv2Url || 'https://areena.yle.fi/tv/suorat/yle-tv2';
+                                } else if (bId === 'hbo-max') {
+                                    url = 'https://www.hbomax.com/fi/fi/olympics';
+                                } else if (bId === 'eurosport1') {
+                                    url = 'https://www.eurosport.fi';
+                                }
+                                if (url) {
+                                    return `<a href="${url}" target="_blank" rel="noopener" class="bc-tag ${type}">${name}</a>`;
+                                }
                                 return `<span class="bc-tag ${type}">${name}</span>`;
                             }).join('');
                         };

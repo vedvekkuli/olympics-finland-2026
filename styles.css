@@ -1060,6 +1060,22 @@ body {
     color: #1565c0;
 }
 
+a.bc-tag {
+    text-decoration: none;
+}
+
+a.bc-tag:hover {
+    opacity: 0.8;
+}
+
+a.bc-tag.free:hover {
+    color: #2e7d32;
+}
+
+a.bc-tag.paid:hover {
+    color: #1565c0;
+}
+
 /* Match rows for curling (multiple matches with different broadcasts) */
 .match-row {
     display: flex;
@@ -1921,7 +1937,7 @@ body {
     .filter-panel {
         left: 50%;
         right: auto;
-        transform: translateX(-50%) translateY(100%);
+        transform: translateX(-50%) translateY(calc(100% + 16px));
         width: 400px;
         max-width: calc(100vw - 32px);
         border-radius: 16px;
