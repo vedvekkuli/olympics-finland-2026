@@ -250,7 +250,7 @@ const olympicSchedule = [
             { time: '12:30', sport: 'alppihiihto', name: 'M Syöksylasku', detail: 'Elian Lehto', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1'], yleareenanUrl: 'https://areena.yle.fi/1-76891289' },
             { time: '13:10', sport: 'jaakiekko-naiset', name: '🇩🇪–🇯🇵', detail: 'B-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-76891292' },
             { time: '14:00', sport: 'maastohiihto', name: 'N Yhdistelmäkilpailu 20 km', detail: 'Kerttu Niskanen, Krista Pärmäkoski, Vilma Ryytty, Vilma Nissinen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768176' },
-            { time: '15:00', sport: 'freestylehiihto', name: 'M Slopestyle, karsinta', detail: '', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-76891295' },
+            { time: '15:00', sport: 'freestylehiihto', name: 'M Slopestyle, karsinta', detail: 'Kuura Koivisto, Elias Lajunen, Elias Syrjä', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-76891295' },
             { time: '15:35', sport: 'curling', name: 'Sekajoukkue, alkusarja', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-76891301', matchBroadcasts: [
                 { match: '🇸🇪–🇮🇹', broadcasts: ['yle-areena', 'hbo-max'] },
                 { match: '🇪🇪–🇳🇴, 🇨🇿–🇰🇷, 🇬🇧–🇺🇸', broadcasts: ['hbo-max'] }
