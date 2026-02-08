@@ -317,7 +317,7 @@ const olympicSchedule = [
             { time: '19:05', sport: 'curling', name: 'Sekajoukkue, semifinaali', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77008995' },
             { time: '20:00', sport: 'makihyppy', name: 'M Normaalimäki', detail: 'Antti Aalto, Niko Kytösaho, Vilho Palosaari', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768502' },
             { time: '20:20', sport: 'taitoluistelu', name: 'Jäätanssi, rytmitanssi', detail: 'Turkkila/Versluis', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77008998' },
-            { time: '20:30', sport: 'lumilautailu', name: 'N Big Air, finaali', detail: 'Eveliina Taka', medal: true, finnish: true, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77009001' },
+            { time: '20:30', sport: 'lumilautailu', name: 'N Big Air, finaali', detail: 'Eveliina Taka?', medal: true, finnish: true, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77009001' },
             { time: '21:40', sport: 'jaakiekko-naiset', name: '🇨🇭–🇺🇸', detail: 'A-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77009004' },
             { time: '22:10', sport: 'jaakiekko-naiset', name: '🇨🇦–🇨🇿', detail: 'A-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77009007' }
         ]
