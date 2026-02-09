@@ -329,7 +329,7 @@ const olympicSchedule = [
         label: 'Sprinttipäivä',
         events: [
             { time: '10:15', sport: 'maastohiihto', name: 'M/N Sprintti (p), karsinta', detail: 'Jasmi Joensuu ym.', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768175' },
-            { time: '11:30', sport: 'alppihiihto', name: 'N Joukkuekilpailu, syöksylasku', detail: 'Rosa Pohjolainen', medal: false, finnish: true, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77062119' },
+            { time: '11:30', sport: 'alppihiihto', name: 'N Joukkuekilpailu, syöksylasku', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77062119' },
             { time: '11:30', sport: 'short-track', name: 'N 500 m, alkuerät', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '12:08', sport: 'short-track', name: 'M 1000 m, alkuerät', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '12:15', sport: 'freestylehiihto', name: 'M Kumparelasku, karsinta 1', detail: 'Akseli Ahvenainen, Olli Penttala, Severi Vierelä, Rasmus Karjalainen', medal: false, finnish: true, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77062124' },
@@ -340,7 +340,7 @@ const olympicSchedule = [
             { time: '14:09', sport: 'maastohiihto', name: 'N Sprintti (p), finaali', detail: 'Jasmi Joensuu?', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '14:21', sport: 'maastohiihto', name: 'M Sprintti (p), finaali', detail: 'Joni Mäki ym.?', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '14:30', sport: 'ampumahiihto', name: 'M Normaalimatka 20 km', detail: 'Suomen miehet', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768445' },
-            { time: '15:00', sport: 'alppihiihto', name: 'N Joukkuekilpailu, pujottelu', detail: 'Silja Koskinen', medal: true, finnish: true, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77062135' },
+            { time: '15:00', sport: 'alppihiihto', name: 'N Joukkuekilpailu, pujottelu', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77062135' },
             { time: '15:05', sport: 'curling', name: 'Sekajoukkue, pronssiottelu', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77062145' },
             { time: '15:15', sport: 'freestylehiihto', name: 'N Kumparelasku, karsinta 1', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '17:40', sport: 'jaakiekko-naiset', name: '🇮🇹–🇩🇪', detail: 'B-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77062154' },
