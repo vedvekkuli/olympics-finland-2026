@@ -4,7 +4,7 @@
 // ============================================
 
 // ============================================
-// FINNISH ATHLETES - 103 total
+// FINNISH ATHLETES - 102 total
 // ============================================
 const finnishAthletes = {
     'maastohiihto': {
@@ -50,10 +50,10 @@ const finnishAthletes = {
     'alppihiihto': {
         name_fi: 'Alppihiihto',
         emoji: '⛷️',
-        athlete_count: 6,
+        athlete_count: 5,
         medal_hope: true,
         men: ['Eduard Hallberg', 'Elian Lehto', 'Jesper Pohjolainen'],
-        women: ['Silja Koskinen', 'Rosa Pohjolainen', 'Erika Pykäläinen'],
+        women: ['Silja Koskinen', 'Rosa Pohjolainen'],
         events: ['Syöksylasku', 'Super-G', 'Suurpujottelu', 'Pujottelu', 'Joukkuekilpailu'],
         stars: ['Eduard Hallberg']
     },
@@ -471,14 +471,14 @@ const olympicSchedule = [
         label: '',
         events: [
             { time: '10:05', sport: 'curling', name: 'M Alkusarja', detail: '🇺🇸–🇸🇪, 🇩🇪–🇬🇧, 🇳🇴–🇮🇹', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074290' },
-            { time: '11:00', sport: 'alppihiihto', name: 'N Suurpujottelu', detail: 'Erika Pykäläinen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1'], yleareenanUrl: 'https://areena.yle.fi/1-77074293', yletv2Url: 'https://areena.yle.fi/1-76767821' },
+            { time: '11:00', sport: 'alppihiihto', name: 'N Suurpujottelu', detail: '', medal: true, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1'], yleareenanUrl: 'https://areena.yle.fi/1-77074293', yletv2Url: 'https://areena.yle.fi/1-76767821' },
             { time: '11:00', sport: 'rattikelkkailu', name: 'N Yksikkö, laskut 1-2', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '11:30', sport: 'freestylehiihto', name: 'M Parikumpareet, pudotusvaihe', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074296' },
             { time: '12:15', sport: 'ampumahiihto', name: 'M Takaa-ajo 12,5 km', detail: 'Suomen miehet', medal: true, finnish: true, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-76768443' },
             { time: '12:47', sport: 'freestylehiihto', name: 'M Parikumpareet, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '13:00', sport: 'maastohiihto', name: 'M Viesti 4x7,5 km', detail: 'Suomen miesjoukkue', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768169' },
             { time: '13:10', sport: 'jaakiekko-miehet', name: '🇨🇭–🇨🇿', detail: 'A-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074299' },
-            { time: '14:30', sport: 'alppihiihto', name: 'N Suurpujottelu, 2. kierros', detail: 'Erika Pykäläinen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074302', yletv2Url: 'https://areena.yle.fi/1-76767833' },
+            { time: '14:30', sport: 'alppihiihto', name: 'N Suurpujottelu, 2. kierros', detail: '', medal: true, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074302', yletv2Url: 'https://areena.yle.fi/1-76767833' },
             { time: '14:45', sport: 'lumilautailu', name: 'Lumilautakrossi, sekajoukkue', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074305' },
             { time: '15:05', sport: 'curling', name: 'N Alkusarja', detail: '🇯🇵–🇰🇷, 🇩🇰–🇮🇹, 🇬🇧–🇸🇪, 🇺🇸–🇨🇳', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074310' },
             { time: '15:45', sport: 'ampumahiihto', name: 'N Takaa-ajo 10 km', detail: 'Suvi Minkkinen ym.', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768438' },
