@@ -161,7 +161,7 @@ function renderSchedule() {
 
     // Use the new multi-select filters
     const sportFilterActive = selectedSports.size > 0;
-    const channelFilterActive = selectedChannels.size < 4; // Not all selected
+    const channelFilterActive = selectedChannels.size < 5; // Not all selected
 
     let html = '';
     let hasResults = false;
@@ -268,12 +268,14 @@ function renderSchedule() {
                         // Show actual broadcast channels
                         const broadcasts = event.broadcasts || [];
                         const channelNames = {
+                            'yle-tv1': 'Yle TV1',
                             'yle-tv2': 'Yle TV2',
                             'yle-areena': 'Yle Areena',
                             'hbo-max': 'HBO Max',
                             'eurosport1': 'Eurosport'
                         };
                         const channelTypes = {
+                            'yle-tv1': 'free',
                             'yle-tv2': 'free',
                             'yle-areena': 'free',
                             'hbo-max': 'paid',
@@ -288,6 +290,8 @@ function renderSchedule() {
                                 let url = '';
                                 if (bId === 'yle-areena') {
                                     url = event.yleareenanUrl || 'https://areena.yle.fi';
+                                } else if (bId === 'yle-tv1') {
+                                    url = event.yletv1Url || 'https://areena.yle.fi/tv/suorat/yle-tv1';
                                 } else if (bId === 'yle-tv2') {
                                     url = event.yletv2Url || 'https://areena.yle.fi/tv/suorat/yle-tv2';
                                 } else if (bId === 'hbo-max') {
@@ -531,7 +535,7 @@ function renderAthletes() {
 // FILTER INITIALIZATION
 // ============================================
 let selectedSports = new Set();
-let selectedChannels = new Set(['yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1']);
+let selectedChannels = new Set(['yle-tv1', 'yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1']);
 
 function initFilters() {
     const finnishOnly = document.getElementById('finnishOnly');
@@ -678,7 +682,7 @@ function updateSportCount() {
 function updateChannelCount() {
     const trigger = document.getElementById('channelTrigger');
     const textEl = document.getElementById('channelText');
-    const allChannels = 4;
+    const allChannels = 5;
 
     trigger?.classList.toggle('active', selectedChannels.size < allChannels);
 
@@ -688,6 +692,7 @@ function updateChannelCount() {
             textEl.textContent = 'Kaikki kanavat';
         } else if (selectedChannels.size === 1) {
             const channelNames = {
+                'yle-tv1': 'Yle TV1',
                 'yle-tv2': 'Yle TV2',
                 'yle-areena': 'Yle Areena',
                 'hbo-max': 'HBO Max',

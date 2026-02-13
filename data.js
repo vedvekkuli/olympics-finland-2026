@@ -139,6 +139,13 @@ const finnishAthletes = {
 // BROADCASTING CHANNELS
 // ============================================
 const broadcastChannels = {
+    'yle-tv1': {
+        name: 'Yle TV1',
+        type: 'free_tv',
+        url: 'https://areena.yle.fi/tv/suorat/yle-tv1',
+        description: 'Ylen pääkanava - jääkiekko ym.',
+        sports: ['jaakiekko']
+    },
     'yle-tv2': {
         name: 'Yle TV2',
         type: 'free_tv',
@@ -417,22 +424,22 @@ const olympicSchedule = [
         events: [
             { time: '10:05', sport: 'curling', name: 'M Alkusarja', detail: '🇨🇦–🇺🇸, 🇬🇧–🇮🇹, 🇨🇳–🇳🇴, 🇨🇭–🇨🇿', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76727646' },
             { time: '11:00', sport: 'lumilautailu', name: 'N Lumilautakrossi, karsinta', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
-            { time: '13:00', sport: 'maastohiihto', name: 'M 10 km (v)', detail: 'Niko Anttola, Emil Liekari, Joni Mäki, Arsi Ruuskanen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768166' },
+            { time: '12:45', sport: 'maastohiihto', name: 'M 10 km (v)', detail: 'Niko Anttola, Emil Liekari, Joni Mäki, Arsi Ruuskanen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768166' },
             { time: '13:10', sport: 'jaakiekko-miehet', name: '🇮🇹–🇸🇰', detail: 'B-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77070054' },
-            { time: '13:10', sport: 'jaakiekko-miehet', name: '🇫🇮–🇸🇪', detail: 'B-lohko', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77070049', yletv2Url: 'https://areena.yle.fi/1-76771695' },
+            { time: '13:10', sport: 'jaakiekko-miehet', name: '🇫🇮–🇸🇪', detail: 'B-lohko', medal: false, finnish: true, broadcasts: ['yle-tv1', 'yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77070049', yletv1Url: 'https://areena.yle.fi/1-76771695' },
             { time: '14:30', sport: 'lumilautailu', name: 'N Lumilautakrossi, erävaihe', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77070179' },
-            { time: '15:00', sport: 'ampumahiihto', name: 'M Pikamatka 10 km', detail: 'Tero Seppälä ym.', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768452' },
+            { time: '15:00', sport: 'ampumahiihto', name: 'M Pikamatka 10 km', detail: 'Tero Seppälä, Olli Hiidensalo, Otto Invenius, Tuomas Harjula', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768452' },
             { time: '15:05', sport: 'curling', name: 'N Alkusarja', detail: '🇩🇰–🇸🇪, 🇨🇳–🇨🇭, 🇺🇸–🇨🇦, 🇬🇧–🇰🇷', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '15:46', sport: 'lumilautailu', name: 'N Lumilautakrossi, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '17:00', sport: 'pikaluistelu', name: 'M 10000 m', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77070260' },
             { time: '17:00', sport: 'skeleton', name: 'N Laskut 1-2', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '17:40', sport: 'jaakiekko-miehet', name: '🇫🇷–🇨🇿', detail: 'A-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77070266' },
             { time: '17:40', sport: 'jaakiekko-naiset', name: 'Puolivälierä 1', detail: '', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77070513', yletv2Url: 'https://areena.yle.fi/1-76760266' },
-            { time: '20:00', sport: 'taitoluistelu', name: 'M Vapaaohjelma', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77070594' },
+            { time: '20:15', sport: 'taitoluistelu', name: 'M Vapaaohjelma', detail: '', medal: true, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-77070594' },
             { time: '20:05', sport: 'curling', name: 'M Alkusarja', detail: '🇨🇭–🇨🇳, 🇨🇿–🇳🇴, 🇩🇪–🇮🇹, 🇨🇦–🇸🇪', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '20:30', sport: 'lumilautailu', name: 'M Halfpipe, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77070698' },
             { time: '20:30', sport: 'skeleton', name: 'M Laskut 3-4', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77070892' },
-            { time: '22:10', sport: 'jaakiekko-miehet', name: '🇨🇦–🇨🇭', detail: 'A-lohko', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77071287' },
+            { time: '21:45', sport: 'jaakiekko-miehet', name: '🇨🇦–🇨🇭', detail: 'A-lohko', medal: false, finnish: false, broadcasts: ['yle-tv1', 'yle-areena', 'hbo-max'], yletv1Url: 'https://areena.yle.fi/1-77071287' },
             { time: '22:10', sport: 'jaakiekko-naiset', name: 'Puolivälierä 2', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77071606' }
         ]
     },
