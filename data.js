@@ -513,23 +513,23 @@ const olympicSchedule = [
         label: 'Hallbergin päivä',
         special: true,
         events: [
-            { time: '10:05', sport: 'curling', name: 'N Alkusarja', detail: '🇸🇪–🇨🇭, 🇨🇳–🇨🇦, 🇩🇰–🇬🇧', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074744' },
-            { time: '11:00', sport: 'alppihiihto', name: 'M Pujottelu', detail: 'Eduard Hallberg', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1'], yleareenanUrl: 'https://areena.yle.fi/1-77074747', yletv2Url: 'https://areena.yle.fi/1-76767827' },
+            { time: '10:05', sport: 'curling', name: 'N Alkusarja', detail: '🇸🇪–🇨🇭, 🇨🇳–🇨🇦, 🇩🇰–🇬🇧', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074744' },
+            { time: '11:00', sport: 'alppihiihto', name: 'M Pujottelu', detail: 'Eduard Hallberg, Jesper Pohjolainen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max', 'eurosport1'], yleareenanUrl: 'https://areena.yle.fi/1-77074747', yletv2Url: 'https://areena.yle.fi/1-76767827' },
             { time: '11:00', sport: 'rattikelkkailu', name: 'M Kaksikko, laskut 1-2', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '11:30', sport: 'lumilautailu', name: 'N Slopestyle, karsinta', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074750' },
             { time: '12:00', sport: 'short-track', name: 'N 1000 m, puolivälierät', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074753' },
             { time: '13:04', sport: 'short-track', name: 'M 5000 m viesti, välierät', detail: '', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76771054' },
-            { time: '13:42', sport: 'short-track', name: 'N 1000 m, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
-            { time: '14:30', sport: 'alppihiihto', name: 'M Pujottelu, 2. kierros', detail: 'Eduard Hallberg', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074781', yletv2Url: 'https://areena.yle.fi/1-76767814' },
+            { time: '13:42', sport: 'short-track', name: 'N 1000 m, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
+            { time: '14:30', sport: 'alppihiihto', name: 'M Pujottelu, 2. kierros', detail: 'Eduard Hallberg, Jesper Pohjolainen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074781', yletv2Url: 'https://areena.yle.fi/1-76767814' },
             { time: '15:00', sport: 'lumilautailu', name: 'M Slopestyle, karsinta', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074784' },
-            { time: '15:05', sport: 'curling', name: 'M Alkusarja', detail: '🇬🇧–🇳🇴, 🇨🇿–🇨🇦, 🇸🇪–🇩🇪, 🇮🇹–🇨🇳', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074787' },
-            { time: '17:40', sport: 'jaakiekko-naiset', name: 'Välierä 1', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074790' },
-            { time: '20:00', sport: 'makihyppy', name: 'M Superjoukkue', detail: 'Antti Aalto, Niko Kytösaho, Vilho Palosaari', medal: true, finnish: true, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074793' },
+            { time: '15:05', sport: 'curling', name: 'M Alkusarja', detail: '🇬🇧–🇳🇴, 🇨🇿–🇨🇦, 🇸🇪–🇩🇪, 🇮🇹–🇨🇳', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074787' },
+            { time: '17:40', sport: 'jaakiekko-naiset', name: 'Välierä: 🇺🇸–🇸🇪', detail: '', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074790' },
+            { time: '20:00', sport: 'makihyppy', name: 'M Superjoukkue', detail: 'Antti Aalto, Niko Kytösaho', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074793' },
             { time: '20:00', sport: 'rattikelkkailu', name: 'N Yksikkö, laskut 3-4', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074801' },
             { time: '20:05', sport: 'curling', name: 'N Alkusarja', detail: '🇺🇸–🇮🇹, 🇰🇷–🇨🇳, 🇨🇭–🇬🇧, 🇯🇵–🇨🇦', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
-            { time: '20:30', sport: 'freestylehiihto', name: 'N Big Air, finaali', detail: 'Anni Kärävä?', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074808', yletv2Url: 'https://areena.yle.fi/1-76767729' },
+            { time: '20:30', sport: 'freestylehiihto', name: 'N Big Air, finaali', detail: 'Anni Kärävä', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074808', yletv2Url: 'https://areena.yle.fi/1-76767729' },
             { time: '21:00', sport: 'taitoluistelu', name: 'Pariluistelu, vapaaohjelma', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074814' },
-            { time: '22:10', sport: 'jaakiekko-naiset', name: 'Välierä 2', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074818' }
+            { time: '22:10', sport: 'jaakiekko-naiset', name: 'Välierä: 🇨🇦–🇨🇭', detail: '', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074818' }
         ]
     },
     // ========== TIISTAI 17.2. ==========
