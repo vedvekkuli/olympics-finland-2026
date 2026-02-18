@@ -1,7 +1,7 @@
 // ============================================
 // Milano Cortina 2026 - OFFICIAL DATA
 // Updated from Yle Teksti-TV and Olympiakomitea sources
-// Last update: Ti 17.2.2026 – Neljännesvälierät, parisprinttiparit, Herola pronssi
+// Last update: Ke 18.2.2026 – Puolivälierät, parisprintit, neljännesvälierätulokset, naisten jääkiekkovälierätulokset
 // ============================================
 
 // ============================================
@@ -525,20 +525,21 @@ const olympicSchedule = [
             { time: '14:30', sport: 'alppihiihto', name: 'M Pujottelu, 2. kierros', detail: 'Ei suomalaisia', medal: true, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074781', yletv2Url: 'https://areena.yle.fi/1-76767814' },
             { time: '15:00', sport: 'lumilautailu', name: 'M Slopestyle, karsinta', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074784' },
             { time: '15:05', sport: 'curling', name: 'M Alkusarja', detail: '🇬🇧–🇳🇴, 🇨🇿–🇨🇦, 🇸🇪–🇩🇪, 🇮🇹–🇨🇳', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074787' },
-            { time: '17:40', sport: 'jaakiekko-naiset', name: 'Välierä: 🇺🇸–🇸🇪', detail: '', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074790' },
+            { time: '17:40', sport: 'jaakiekko-naiset', name: 'Välierä: 🇺🇸–🇸🇪', detail: 'USA 5-0 (1-0,4-0,0-0)', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074790' },
             { time: '20:00', sport: 'makihyppy', name: 'M Superjoukkue', detail: 'Antti Aalto, Niko Kytösaho', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074793' },
             { time: '20:00', sport: 'rattikelkkailu', name: 'N Yksikkö, laskut 3-4', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074801' },
             { time: '20:05', sport: 'curling', name: 'N Alkusarja', detail: '🇺🇸–🇮🇹, 🇰🇷–🇨🇳, 🇨🇭–🇬🇧, 🇯🇵–🇨🇦', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '20:30', sport: 'freestylehiihto', name: 'N Big Air, finaali', detail: 'Anni Kärävä', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074808', yletv2Url: 'https://areena.yle.fi/1-76767729' },
             { time: '21:00', sport: 'taitoluistelu', name: 'Pariluistelu, vapaaohjelma', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074814' },
-            { time: '22:10', sport: 'jaakiekko-naiset', name: 'Välierä: 🇨🇦–🇨🇭', detail: '', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074818' }
+            { time: '22:10', sport: 'jaakiekko-naiset', name: 'Välierä: 🇨🇦–🇨🇭', detail: 'Kanada 2-1 (0-0,2-0,0-1)', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77074818' }
         ]
     },
-    // ========== TIISTAI 17.2. ==========
+    // ========== TIISTAI 17.2. - HEROLA PRONSSI, BIG AIR, NELJÄNNESVÄLIERÄT ==========
     {
         date: '2026-02-17',
         day: 'Ti',
-        label: '',
+        label: 'Herola pronssi!',
+        special: true,
         events: [
             { time: '09:55', sport: 'taitoluistelu', name: 'Pariluistelu, vapaaohjelma (kooste)', detail: '', medal: false, finnish: false, broadcasts: ['yle-tv2', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76763070' },
             { time: '10:05', sport: 'curling', name: 'M Alkusarja', detail: '🇨🇭–🇸🇪, 🇺🇸–🇨🇳, 🇨🇿–🇩🇪', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075216' },
@@ -550,14 +551,14 @@ const olympicSchedule = [
             { time: '14:30', sport: 'freestylehiihto', name: 'M Hypyt, karsinta', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '14:45', sport: 'yhdistetty', name: 'M Suurmäki/10 km', detail: '🥉 Ilkka Herola 3. (+14,8s), Eero Hirvonen 5., Wille Karhumaa', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76771595' },
             { time: '15:05', sport: 'curling', name: 'N Alkusarja', detail: '🇸🇪–🇨🇦, 🇮🇹–🇯🇵, 🇩🇰–🇺🇸, 🇰🇷–🇨🇭', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075233' },
-            { time: '15:30', sport: 'pikaluistelu', name: 'M/N Joukkuetakaa-ajo, finaalit', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075236' },
+            { time: '15:30', sport: 'pikaluistelu', name: 'M/N Joukkuetakaa-ajo, finaalit', detail: 'M: 1. Italia 2. USA 3. Kiina / N: 1. Kanada 2. Hollanti 3. Japani', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075236' },
             { time: '15:30', sport: 'ampumahiihto', name: 'M Viesti 4x7,5 km', detail: 'Suomi 7. (+2.34,1, 2+10) – Hiidensalo, Seppälä, Klemettinen, Invenius. Ranska voitti.', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768439' },
-            { time: '17:40', sport: 'jaakiekko-miehet', name: '🇨🇿–🇩🇰', detail: 'Neljännesvälierä', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075241' },
-            { time: '19:45', sport: 'taitoluistelu', name: 'N Lyhytohjelma', detail: 'Iida Karhunen', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075245', yletv2Url: 'https://areena.yle.fi/1-76763075' },
-            { time: '20:00', sport: 'rattikelkkailu', name: 'M Kaksikko, laskut 3-4', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075249' },
+            { time: '17:40', sport: 'jaakiekko-miehet', name: '🇨🇿–🇩🇰', detail: 'Neljännesvälierä – Tshekki 3-2', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075241' },
+            { time: '19:45', sport: 'taitoluistelu', name: 'N Lyhytohjelma', detail: 'Iida Karhunen 15. / 65.06 p. (ennätyspisteet!) – 1. Nakai (JPN) 78.71', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075245', yletv2Url: 'https://areena.yle.fi/1-76763075' },
+            { time: '20:00', sport: 'rattikelkkailu', name: 'M Kaksikko, laskut 3-4', detail: 'Saksan kolmoisvoitto: 1. Lochner/Fleischhauer 2. Friedrich/Schuller 3. Ammour/Schaller', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075249' },
             { time: '20:05', sport: 'curling', name: 'M Alkusarja', detail: '🇩🇪–🇨🇭, 🇺🇸–🇮🇹, 🇨🇦–🇬🇧, 🇸🇪–🇳🇴', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
-            { time: '20:30', sport: 'freestylehiihto', name: 'M Big Air, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075254' },
-            { time: '22:10', sport: 'jaakiekko-miehet', name: '🇸🇪–🇱🇻', detail: 'Neljännesvälierä', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075259' }
+            { time: '20:30', sport: 'freestylehiihto', name: 'M Big Air, finaali', detail: '1. Frostad (NOR) 195.50, 2. Forehand (USA) 193.25, 3. Svancer (AUT) 191.25', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075254' },
+            { time: '22:10', sport: 'jaakiekko-miehet', name: '🇸🇪–🇱🇻', detail: 'Neljännesvälierä – Ruotsi 5-1', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075259' }
         ]
     },
     // ========== KESKIVIIKKO 18.2. - PUOLIVÄLIERÄT ==========
@@ -573,18 +574,18 @@ const olympicSchedule = [
             { time: '11:15', sport: 'maastohiihto', name: 'M Parisprintti (v), karsinta', detail: 'Lauri Vuorinen / Joni Mäki', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '12:30', sport: 'freestylehiihto', name: 'N Hypyt, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075265' },
             { time: '12:45', sport: 'maastohiihto', name: 'N Parisprintti (v), finaali', detail: 'Jasmi Joensuu / Jasmin Kähärä', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768179' },
-            { time: '13:10', sport: 'jaakiekko-miehet', name: '🇸🇰–🇩🇪', detail: 'Puolivälierä', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075268' },
+            { time: '13:10', sport: 'jaakiekko-miehet', name: '🇸🇰–🇩🇪', detail: 'Puolivälierä', medal: false, finnish: false, broadcasts: ['yle-tv1', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075268' },
             { time: '13:15', sport: 'maastohiihto', name: 'M Parisprintti (v), finaali', detail: 'Lauri Vuorinen / Joni Mäki', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'] },
             { time: '13:30', sport: 'lumilautailu', name: 'M Slopestyle, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075271', yletv2Url: 'https://areena.yle.fi/1-76762069' },
             { time: '14:30', sport: 'alppihiihto', name: 'N Pujottelu, 2. kierros', detail: 'Rosa Pohjolainen, Silja Koskinen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075274', yletv2Url: 'https://areena.yle.fi/1-76767829' },
             { time: '15:05', sport: 'curling', name: 'M Alkusarja', detail: '🇮🇹–🇨🇦, 🇨🇳–🇨🇿, 🇳🇴–🇨🇭, 🇺🇸–🇬🇧', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075278' },
             { time: '15:45', sport: 'ampumahiihto', name: 'N Viesti 4x6 km', detail: 'Inka Hämäläinen, Venla Lehtonen, Sonja Leinamo, Suvi Minkkinen', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768444' },
-            { time: '17:40', sport: 'jaakiekko-miehet', name: '🇨🇦–🇨🇿/🇩🇰', detail: 'Puolivälierä', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075285' },
-            { time: '19:10', sport: 'jaakiekko-miehet', name: '🇫🇮–🇨🇭', detail: 'Puolivälierä', medal: false, finnish: true, broadcasts: ['yle-tv1', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075288' },
+            { time: '17:40', sport: 'jaakiekko-miehet', name: '🇨🇦–🇨🇿', detail: 'Puolivälierä', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075285' },
+            { time: '19:10', sport: 'jaakiekko-miehet', name: '🇫🇮–🇨🇭', detail: 'Puolivälierä', medal: false, finnish: true, broadcasts: ['yle-tv1', 'yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075288' },
             { time: '20:05', sport: 'curling', name: 'N Alkusarja', detail: '🇬🇧–🇯🇵, 🇨🇭–🇩🇰, 🇨🇦–🇮🇹, 🇨🇳–🇸🇪', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075292' },
             { time: '21:15', sport: 'short-track', name: 'M 500 m, puolivälierät', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075295' },
             { time: '21:59', sport: 'short-track', name: 'N 3000 m viesti, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
-            { time: '22:10', sport: 'jaakiekko-miehet', name: '🇺🇸–🇸🇪/🇱🇻', detail: 'Puolivälierä', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075298' },
+            { time: '22:10', sport: 'jaakiekko-miehet', name: '🇺🇸–🇸🇪', detail: 'Puolivälierä', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075298' },
             { time: '22:29', sport: 'short-track', name: 'M 500 m, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] }
         ]
     },
