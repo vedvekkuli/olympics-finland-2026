@@ -1,7 +1,7 @@
 // ============================================
 // Milano Cortina 2026 - OFFICIAL DATA
 // Updated from Yle Teksti-TV and Olympiakomitea sources
-// Last update: Ke 18.2.2026 – Puolivälierätulokset (Suomi jatkoon!), parisprintit, pujottelu, välieräkaavio
+// Last update: To 19.2.2026 – Välierät: Kanada–Suomi pe 17:40! USA 1-0 Ruotsi, kaikki puolivälierätulokset
 // ============================================
 
 // ============================================
@@ -114,7 +114,7 @@ const finnishAthletes = {
             { date: 'Pe 13.2.', time: '13:10', opponent: '🇸🇪 Ruotsi', group: 'B', highlight: true, result: '4-1' },
             { date: 'La 14.2.', time: '17:40', opponent: '🇮🇹 Italia', group: 'B', result: '11-0' },
             { date: 'Ke 18.2.', time: '19:10', opponent: '🇨🇭 Sveitsi', group: 'Puolivälierä', highlight: true, result: '3-2 ja.' },
-            { date: 'Pe 20.2.', time: '17:40/22:10', opponent: '🇨🇦/🇸🇰', group: 'Välierä', highlight: true }
+            { date: 'Pe 20.2.', time: '17:40', opponent: '🇨🇦 Kanada', group: 'Välierä', highlight: true }
         ],
         stars: ['Mikko Rantanen', 'Sebastian Aho', 'Miro Heiskanen']
     },
@@ -586,7 +586,7 @@ const olympicSchedule = [
             { time: '20:05', sport: 'curling', name: 'N Alkusarja', detail: '🇬🇧–🇯🇵, 🇨🇭–🇩🇰, 🇨🇦–🇮🇹, 🇨🇳–🇸🇪', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075292' },
             { time: '21:15', sport: 'short-track', name: 'M 500 m, puolivälierät', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075295' },
             { time: '21:59', sport: 'short-track', name: 'N 3000 m viesti, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
-            { time: '22:10', sport: 'jaakiekko-miehet', name: '🇺🇸–🇸🇪', detail: 'Puolivälierä', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075298' },
+            { time: '22:10', sport: 'jaakiekko-miehet', name: '🇺🇸–🇸🇪', detail: 'Puolivälierä – USA 1-0 (0-0,1-0,0-0, Larkin 31:03)', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075298' },
             { time: '22:29', sport: 'short-track', name: 'M 500 m, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] }
         ]
     },
@@ -628,12 +628,12 @@ const olympicSchedule = [
             { time: '15:05', sport: 'curling', name: 'N Välierät', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075509' },
             { time: '15:15', sport: 'ampumahiihto', name: 'M Yhteislähtö 15 km', detail: 'Suomen miehet', medal: true, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yletv2Url: 'https://areena.yle.fi/1-76768437' },
             { time: '17:30', sport: 'pikaluistelu', name: 'N 1500 m', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075514' },
-            { time: '17:40', sport: 'jaakiekko-miehet', name: '🇨🇦 Kanada – 🇫🇮/🇸🇪', detail: 'Välierä 1 – Jos USA voitti: Kanada–Suomi. Jos Ruotsi voitti: Kanada–Ruotsi.', medal: false, finnish: true, broadcasts: ['yle-tv1', 'yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075519' },
+            { time: '17:40', sport: 'jaakiekko-miehet', name: '🇨🇦–🇫🇮 Kanada–Suomi', detail: 'Välierä – Leijonat kohtaa Kanadan!', medal: false, finnish: true, broadcasts: ['yle-tv1', 'yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075519' },
             { time: '19:00', sport: 'rattikelkkailu', name: 'N Kaksikko, laskut 1-2', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '20:05', sport: 'curling', name: 'M Pronssiottelu', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075522' },
             { time: '20:30', sport: 'freestylehiihto', name: 'M Halfpipe, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075531', yletv2Url: 'https://areena.yle.fi/1-76767730' },
             { time: '21:15', sport: 'short-track', name: 'N 1500 m, puolivälierät', detail: '', medal: false, finnish: false, broadcasts: ['yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075534' },
-            { time: '22:10', sport: 'jaakiekko-miehet', name: '🇸🇰 Slovakia – 🇺🇸/🇫🇮', detail: 'Välierä 2 – Jos USA voitti: USA–Slovakia. Jos Ruotsi voitti: Slovakia–Suomi.', medal: false, finnish: true, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075537', yletv2Url: 'https://areena.yle.fi/1-76771696' },
+            { time: '22:10', sport: 'jaakiekko-miehet', name: '🇺🇸–🇸🇰 USA–Slovakia', detail: 'Välierä', medal: false, finnish: false, broadcasts: ['yle-tv2', 'yle-areena', 'hbo-max'], yleareenanUrl: 'https://areena.yle.fi/1-77075537', yletv2Url: 'https://areena.yle.fi/1-76771696' },
             { time: '22:29', sport: 'short-track', name: 'M 5000 m viesti, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] },
             { time: '23:03', sport: 'short-track', name: 'N 1500 m, finaali', detail: '', medal: true, finnish: false, broadcasts: ['yle-areena', 'hbo-max'] }
         ]
