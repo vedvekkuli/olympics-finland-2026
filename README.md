@@ -108,6 +108,10 @@ olympics-finland-2026/
 - [Yle](https://yle.fi) - Broadcasting info
 - [Finnish Olympic Committee](https://www.olympiakomitea.fi)
 
+## Technical help
+
+- [AI Suomi](https://aisuomi.fi)
+
 ## License
 
 MIT - Free to use and modify.
